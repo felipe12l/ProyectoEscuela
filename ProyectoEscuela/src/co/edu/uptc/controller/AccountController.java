@@ -28,7 +28,7 @@ public class AccountController {
         new Account("2022159", "maria.rodriguez01","HJAkjsf234",Roles.STUDENT.name(), "maria.rodriguez01@uptc.edu.co"),
         new Account("46389778", "johana.torres","JKJfsdhf334",Roles.PROFESSOR.name(), "johana.torres@uptc.edu.co"),
         new Account("10953483","ivan.mendoza","HJ23jkil",Roles.PROFESSOR.name(), "ivan.mendoza@uptc.edu.co"),
-        new Account("47865421","laura.castillo","ADmin1234",Roles.ADMINISTRATOR.name(), "laura.castillo@uptc.edu.co")
+        new Account("47865421","administrativo.sog","Admin1234",Roles.ADMINISTRATOR.name(), "administrativo.sog@uptc.edu.co")
     };
 
     public AccountController(){
