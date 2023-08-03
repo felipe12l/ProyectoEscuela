@@ -1,6 +1,7 @@
 
 package co.edu.uptc.test;
 
+import co.edu.uptc.controller.CovenantController;
 import co.edu.uptc.controller.LoginController;
 import co.edu.uptc.utilities.InputLibrary;
 
@@ -17,8 +18,10 @@ public class LoginView {
     final LoginController loginController;
     private final String[] roles;
     private final String errorMessage;
+     final CovenantController cc;
 
     public LoginView(){
+        cc=new CovenantController();
         this.util = new InputLibrary();
         this.loginController = new LoginController();
         this.roles = new String[]{"Student", "Professor", "Secretary", "Administrator"};
@@ -87,7 +90,8 @@ public class LoginView {
                 |\t1.Sing in accounts\t|
                 |\t2.see accounts\t\t|
                 |\t3.change password\t|
-                |\t4.logout\t\t\t|
+                |\t4.add agreements\t|
+                |\t0.logout\t\t\t|
                 ========================""";
         int decision,role;
         do{
@@ -105,13 +109,29 @@ public class LoginView {
                     System.out.println(this.changePassword() ? "password change was successful":"Error");
                 break;
                 case 4:
+                    int option=9;
+                    System.out.println("Show categories"+cc.showDataCategoryNames()+"\nSelect: " );
+                    option=this.util.inputInt("Selection --------> ", "Invalid input. Try again",0,6);
+                    System.out.println("Input name of the covenant");
+                    String r=this.util.inputStringWithS("Input: ");
+                    System.out.println("Input contact");
+                    String r1=this.util.inputStringWithS("Input: ");
+                    System.out.println("Input name of the contact");
+                    String r2=this.util.inputStringWithS("Input: ");
+                    System.out.println("Input description");
+                    String r3=this.util.inputStringWithS("Input: ");
+                    System.out.println("Input link");
+                    String r4=this.util.inputStringWithS("Input: ");
+                    cc.addCovenant(r,r1,r2,r3,r4,option);
+                    break;
+                case 0:
                     System.out.println(this.logOut() ? "Logging out" : "Error. Try again");
                 break;
                 default:
                     System.out.println("Invalid option, try again.");
                 break;
             }
-        }while(decision!=4);
+        }while(decision!=0);
     }
 
     public boolean singInAccounts(){
@@ -145,7 +165,7 @@ public class LoginView {
         String message = """
                 ========================
                 |\t1.change password\t|
-                |\t2.logout\t\t\t|
+                |\t0.logout\t\t\t|
                 ========================""";
 
         int decision = 0;
@@ -157,6 +177,8 @@ public class LoginView {
                     System.out.println(this.changePassword() ? "password change was successful": "Error");
                 break;
                 case 2:
+                    break;
+                case 0:
                     System.out.println(this.logOut() ? "Logging out" : "Error. Try again");
                     break;
                 default:
@@ -164,6 +186,6 @@ public class LoginView {
                 break;
             }
 
-        }while(decision!=2);
+        }while(decision!=0);
     }
 }

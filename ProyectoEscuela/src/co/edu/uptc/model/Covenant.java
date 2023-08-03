@@ -4,6 +4,18 @@ package co.edu.uptc.model;
 
 public class Covenant {
     private String Tittle, Contact, NameofCreator, Description, Link;
+
+    @Override
+    public String toString() {
+        return  "Tittle='" + Tittle + '\'' +
+                ", Contact='" + Contact + '\'' +
+                ", NameofCreator='" + NameofCreator + '\'' +
+                ", Description='" + Description + '\'' +
+                ", Link='" + Link + '\'' +
+                ", category=" + category
+                ;
+    }
+
     private Category category;
 
     public String getTittle() {

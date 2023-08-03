@@ -16,6 +16,7 @@ public class LoginController {
 
     Account loggedAcount;
 
+
     AccountController acc;
     private PersonController personControler;
     public LoginController(){

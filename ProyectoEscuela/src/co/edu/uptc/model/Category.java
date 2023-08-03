@@ -3,6 +3,19 @@ package co.edu.uptc.model;
 public class Category {
     private String name, description;
 
+
+    public String descToString() {
+        return
+                "description:" + description;
+    }
+
+
+    public String nameToString() {
+        return
+                "Tipo " +name
+                ;
+    }
+
     public String getDescription() {
         return description;
     }

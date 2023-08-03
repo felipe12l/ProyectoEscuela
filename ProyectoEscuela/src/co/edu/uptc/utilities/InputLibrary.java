@@ -101,4 +101,16 @@ public class InputLibrary {
         return returnValue;
 
     }
+    public String inputStringWithS(String message){
+        String returnValue = "";
+
+
+
+        System.out.print(message);
+        returnValue = inputLine.nextLine();
+
+
+        return returnValue;
+
+    }
 }
