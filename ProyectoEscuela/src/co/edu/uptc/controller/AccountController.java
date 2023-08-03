@@ -100,6 +100,14 @@ public class AccountController {
         }
         return null;
     }
+    public Account findAccountById(String id){
+        for(Account acc : this.accounts){
+            if (acc.getId().equals(id)){
+                return acc;
+            }
+        }
+        return null;
+    }
 
     /**
      * Allows you to remove an account from the collection based on username and password

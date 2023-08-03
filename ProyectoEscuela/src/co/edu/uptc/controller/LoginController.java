@@ -2,6 +2,7 @@ package co.edu.uptc.controller;
 import co.edu.uptc.model.Account;
 import co.edu.uptc.controller.AccountController;
 import co.edu.uptc.model.Person;
+import co.edu.uptc.model.persontypes.Student;
 
 
 /**
@@ -34,16 +35,29 @@ public class LoginController {
     * 
  */
     public  boolean login(String nameUser, String password){
-        
-
         if(acc.findAccount(nameUser, password) != null){
             loggedAcount = acc.findAccount(nameUser, password);
             return true;
 
         }
-
         return false;
     }
+    /**
+     * Retrieves the Account object representing the current logged-in user.
+     * This method checks if there is a logged-in account and if its role is 'STUDENT'.
+     * If both conditions are met, it returns the Account associated with the logged-in user.
+     * Otherwise, it returns null, indicating that there is no current logged-in student account.
+     *
+     * @return The Account object representing the current logged-in student, or null if no student is logged in.
+     */
+    public Account getCurrentAccount() {
+        if (loggedAcount != null && loggedAcount.getRole().equalsIgnoreCase(Roles.STUDENT.name())) {
+            return acc.findAccountById(loggedAcount.getId());
+        } else {
+            return null;
+        }
+    }
+
     /**
      * Allows the user who entered to change their password, only allows
      * it if they are already logged in. You must enter the first password
