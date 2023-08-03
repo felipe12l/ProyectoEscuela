@@ -3,6 +3,10 @@ package co.edu.uptc.model;
 
 
 public class Covenant {
+    /**
+     * A class which simulate a covenant
+     * @author Felipe Luna
+     */
     private String Tittle, Contact, NameofCreator, Description, Link;
 
     @Override

@@ -1,14 +1,19 @@
 package co.edu.uptc.model;
 
 public class Category {
+    /**
+     * Category Class... just ff
+     * @author Felipe Luna
+     */
     private String name, description;
 
 
-    public String descToString() {
+    @Override
+    public String toString() {
         return
-                "description:" + description;
+                "Type: " + name +
+                "\nDescription: " + description ;
     }
-
 
     public String nameToString() {
         return

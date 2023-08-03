@@ -8,7 +8,12 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Random;
 
-
+/**
+ * CovenantController is a class which allow to add,precharge and show the covenants
+ * in the program.
+ *
+ * @author Felipe Luna
+ */
 
 public class CovenantController {
 
@@ -22,7 +27,7 @@ public class CovenantController {
     /**
      *method just for charge the initial covenants
      *
-     * @return auxiliarTM, this is a treemap which contains the initial data
+     * @return auxiliarTM, this is a Hashset which contains the initial data
      */
     private HashSet<Covenant>preChargeCovenants(){
         HashSet<Covenant> auxiliarTM=new HashSet<>();
@@ -33,8 +38,9 @@ public class CovenantController {
     }
 
     /**
+     * @autor Felipe Luna
      * this method is used to assign random categories to the precharged covenants
-     * @return
+     * @return c a random category
      */
     private Category asignCategory(){
         Category c=categories.get(new Random().nextInt(categories.size()));
@@ -60,6 +66,20 @@ public class CovenantController {
         String s="";
         for (int i=0;i<categories.size();i++) {
             s=s+"\n"+i+"."+categories.get(i).nameToString();
+        }
+        return s;
+    }
+    public String showAllC(){
+        String s="";
+        for (int i=0;i<categories.size();i++) {
+            s=s+"\n"+i+"."+categories.get(i).toString();
+        }
+        return s;
+    }
+    public String showCovenant(){
+        String s="";
+        for (Covenant c:covenants) {
+            s=s+"\n"+c.toString();
         }
         return s;
     }

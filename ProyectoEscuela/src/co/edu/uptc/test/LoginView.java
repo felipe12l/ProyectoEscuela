@@ -91,6 +91,7 @@ public class LoginView {
                 |\t2.see accounts\t\t|
                 |\t3.change password\t|
                 |\t4.add agreements\t|
+                |\t5.Show agreements\t|
                 |\t0.logout\t\t\t|
                 ========================""";
         int decision,role;
@@ -123,7 +124,10 @@ public class LoginView {
                     System.out.println("Input link");
                     String r4=this.util.inputStringWithS("Input: ");
                     cc.addCovenant(r,r1,r2,r3,r4,option);
+                    System.out.println("agreement added");
                     break;
+                case 5:
+                    System.out.println("Covenants"+cc.showCovenant());
                 case 0:
                     System.out.println(this.logOut() ? "Logging out" : "Error. Try again");
                 break;
@@ -165,6 +169,7 @@ public class LoginView {
         String message = """
                 ========================
                 |\t1.change password\t|
+                |\t2.Show Covenants\t|
                 |\t0.logout\t\t\t|
                 ========================""";
 
@@ -177,6 +182,9 @@ public class LoginView {
                     System.out.println(this.changePassword() ? "password change was successful": "Error");
                 break;
                 case 2:
+                    System.out.println("Show Covenants"+cc.showCovenant()+
+                            "\n---------------------------------------" +
+                            "\n"+cc.showAllC());
                     break;
                 case 0:
                     System.out.println(this.logOut() ? "Logging out" : "Error. Try again");
