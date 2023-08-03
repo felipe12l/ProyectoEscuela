@@ -88,5 +88,14 @@ public class CovenantController {
         Covenant c=new Covenant(tittle, contact, nameofCreator,description,link,categories.get(position));
         covenants.add(c);
     }
+    public boolean DeleteCovenant(String name){
+        for (Covenant c:covenants) {
+            if (c.getTittle().equals(name)){
+                covenants.remove(c);
+                return true;
+            }
+        }
+        return false;
+    }
 
 }

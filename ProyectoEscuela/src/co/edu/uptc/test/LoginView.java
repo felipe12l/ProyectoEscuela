@@ -129,6 +129,15 @@ public class LoginView {
                 case 5:
                     System.out.println("Covenants"+cc.showCovenant());
                     break;
+                case 6:
+                    System.out.println("input covenant name");
+                    String name=this.util.inputStringWithS("input:");
+                    if (cc.DeleteCovenant(name)){
+                        System.out.println("deleted");
+                    }else{
+                        System.out.println("doesn't exist");
+                    }
+                    break;
                 case 0:
                     System.out.println(this.logOut() ? "Logging out" : "Error. Try again");
                 break;
