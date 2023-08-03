@@ -128,6 +128,7 @@ public class LoginView {
                     break;
                 case 5:
                     System.out.println("Covenants"+cc.showCovenant());
+                    break;
                 case 0:
                     System.out.println(this.logOut() ? "Logging out" : "Error. Try again");
                 break;
