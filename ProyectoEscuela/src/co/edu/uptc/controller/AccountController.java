@@ -62,7 +62,7 @@ public class AccountController {
 
         if (this.accounts.contains(newAccount)) return false;
         this.accounts.add(newAccount);
-
+        fmc.writeJsonFileAccounts("accounts",accounts);
         return true;
     }
 
