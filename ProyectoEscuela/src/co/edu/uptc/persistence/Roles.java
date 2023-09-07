@@ -1,4 +1,4 @@
-package co.edu.uptc.controller;
+package co.edu.uptc.persistence;
 
 /**
  * enumerator with the roles available in the login

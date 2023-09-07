@@ -1,6 +1,6 @@
 package co.edu.uptc.utilities;
 
-import co.edu.uptc.controller.Roles;
+import co.edu.uptc.persistence.Roles;
 
 import java.util.Arrays;
 import java.util.HashSet;
