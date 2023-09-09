@@ -1,6 +1,6 @@
 package co.edu.uptc.test;
-import co.edu.uptc.controller.LoginController;
-import co.edu.uptc.controller.SuggestionController;
+import co.edu.uptc.controller.old.LoginController;
+import co.edu.uptc.controller.old.SuggestionController;
 import co.edu.uptc.model.Account;
 import co.edu.uptc.model.Suggestion;
 import co.edu.uptc.utilities.InputLibrary;

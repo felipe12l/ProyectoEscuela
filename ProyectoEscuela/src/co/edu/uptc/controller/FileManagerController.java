@@ -16,8 +16,10 @@ import java.util.HashSet;
 
 public class FileManagerController {
     Gson gson;
-    public final String RUTE = "src\\co\\edu\\uptc\\persistence", EXTENSION = ".json";
-
+    public final String RUTE = "src\\co\\edu\\uptc\\persistence\\", EXTENSION = ".json";
+    public FileManagerController(){
+        gson=new Gson();
+    }
     public HashSet<Account> getFromFileAccounts(String fileName) {
         HashSet< Account> auxiliar=new HashSet<>();
         try {
@@ -54,7 +56,8 @@ public class FileManagerController {
      *
      * @param fileName this param is used to assign the name of the file
      * @param accounts this param is the accounts in the system
-     * @return a boolean value to know if the file has been created succesfully
+     * @return a boolean value to know if the file has been created or modified
+     * successfully
      */
     public boolean writeJsonFileAccounts(String fileName,HashSet<Account> accounts){
         String sJson= gson.toJson(accounts);

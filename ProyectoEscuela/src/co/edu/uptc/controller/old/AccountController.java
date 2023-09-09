@@ -1,5 +1,6 @@
-package co.edu.uptc.controller;
+package co.edu.uptc.controller.old;
 
+import co.edu.uptc.controller.FileManagerController;
 import co.edu.uptc.model.Account;
 import co.edu.uptc.utilities.AccountUtilities;
 
@@ -27,9 +28,11 @@ public class AccountController {
     public AccountController(){
         this.utility = new AccountUtilities();
         this.accounts = new HashSet<>();
+        this.fmc=new FileManagerController();
+        fmc.writeJsonFileAccounts("accounts",accounts);
     }
     public boolean loadAccounts(){
-        accounts=fmc.getFromFileAccounts("Accounts");
+        accounts=fmc.getFromFileAccounts("accounts");
         return true;
     }
 
