@@ -1,8 +1,7 @@
-package co.edu.uptc.controller;
+package co.edu.uptc.controller.old;
 import co.edu.uptc.model.Account;
-import co.edu.uptc.controller.AccountController;
 import co.edu.uptc.model.Person;
-import co.edu.uptc.model.persontypes.Student;
+import co.edu.uptc.persistence.Roles;
 
 
 /**

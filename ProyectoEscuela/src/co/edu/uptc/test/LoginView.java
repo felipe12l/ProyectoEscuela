@@ -1,8 +1,8 @@
 
 package co.edu.uptc.test;
 
-import co.edu.uptc.controller.CovenantController;
-import co.edu.uptc.controller.LoginController;
+import co.edu.uptc.controller.old.CovenantController;
+import co.edu.uptc.controller.old.LoginController;
 import co.edu.uptc.utilities.InputLibrary;
 
 /**

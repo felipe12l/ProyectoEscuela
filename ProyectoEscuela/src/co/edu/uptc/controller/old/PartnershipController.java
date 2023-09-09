@@ -1,4 +1,4 @@
-package co.edu.uptc.controller;
+package co.edu.uptc.controller.old;
 
 public class PartnershipController {
 }

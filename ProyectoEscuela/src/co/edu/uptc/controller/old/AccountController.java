@@ -1,5 +1,6 @@
-package co.edu.uptc.controller;
+package co.edu.uptc.controller.old;
 
+import co.edu.uptc.controller.FileManagerController;
 import co.edu.uptc.model.Account;
 import co.edu.uptc.utilities.AccountUtilities;
 
@@ -17,26 +18,21 @@ import java.util.List;
  */
 
 public class AccountController {
+    private FileManagerController fmc;
     private HashSet<Account> accounts;
     private AccountUtilities utility;
     private String username = "";
     private String password = "";
-    private final Account[] defaultAccounts = {
-        new Account("202210568", "manuel.martinez", "Masfx83", Roles.STUDENT.name(), "manuel.martinez@uptc.edu.co"),
-        new Account("2021456","maria.rodriguez","AJsv92",Roles.STUDENT.name(), "maria.rodriguez@uptc.edu.co"),
-        new Account("2020154", "juan.velandia","njksAPO293",Roles.STUDENT.name(), "juan.velandia@uptc.edu.co"),
-        new Account("2022159", "maria.rodriguez01","HJAkjsf234",Roles.STUDENT.name(), "maria.rodriguez01@uptc.edu.co"),
-        new Account("46389778", "johana.torres","JKJfsdhf334",Roles.PROFESSOR.name(), "johana.torres@uptc.edu.co"),
-        new Account("10953483","ivan.mendoza","HJ23jkil",Roles.PROFESSOR.name(), "ivan.mendoza@uptc.edu.co"),
-        new Account("47865421","administrativo.sog","Admin1234",Roles.ADMINISTRATOR.name(), "administrativo.sog@uptc.edu.co")
-    };
+
 
     public AccountController(){
         this.utility = new AccountUtilities();
         this.accounts = new HashSet<>();
+        this.fmc=new FileManagerController();
+        fmc.writeJsonFileAccounts("accounts",accounts);
     }
     public boolean loadAccounts(){
-        this.accounts = new HashSet<>(List.of(defaultAccounts));
+        accounts=fmc.getFromFileAccounts("accounts");
         return true;
     }
 
@@ -69,7 +65,7 @@ public class AccountController {
 
         if (this.accounts.contains(newAccount)) return false;
         this.accounts.add(newAccount);
-
+        fmc.writeJsonFileAccounts("accounts",accounts);
         return true;
     }
 

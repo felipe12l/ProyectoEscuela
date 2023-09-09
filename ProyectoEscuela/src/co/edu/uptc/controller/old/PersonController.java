@@ -1,8 +1,10 @@
-package co.edu.uptc.controller;
+package co.edu.uptc.controller.old;
 
 import co.edu.uptc.model.Account;
 import co.edu.uptc.model.Person;
 import co.edu.uptc.model.persontypes.*;
+import co.edu.uptc.persistence.Roles;
+
 import java.util.HashSet;
 
 /**
