@@ -25,6 +25,7 @@ public class AccountController {
     private String password = "";
 
 
+
     public AccountController(){
         this.utility = new AccountUtilities();
         this.accounts = new HashSet<>();
@@ -32,6 +33,7 @@ public class AccountController {
         fmc.writeJsonFileAccounts("accounts",accounts);
     }
     public boolean loadAccounts(){
+
         accounts=fmc.getFromFileAccounts("accounts");
         return true;
     }
