@@ -15,7 +15,7 @@ import java.util.HashSet;
 public class FileManagerController {
     private Gson gson;
 
-    public final String RUTE = "src\\co\\edu\\uptc\\persistence\\", EXTENSION = ".json";
+    public final String RUTE = "src\\co\\edu\\co.edu.uptc\\persistence\\", EXTENSION = ".json";
     public FileManagerController(){
         gson=new Gson();
     }
@@ -60,7 +60,7 @@ public class FileManagerController {
      */
     public boolean writeJsonFileAccounts(String fileName,HashSet<Account> accounts){
         String sJson= gson.toJson(accounts);
-        File file =new File("C:\\Users\\Sala7\\Desktop\\ProyectoEscuela\\ProyectoEscuela\\src\\co\\edu\\uptc\\persistence\\"+fileName+EXTENSION);
+        File file =new File("C:\\Users\\Sala7\\Desktop\\ProyectoEscuela\\ProyectoEscuela\\src\\co\\edu\\co.edu.uptc\\persistence\\"+fileName+EXTENSION);
         try{
             FileWriter fw=new FileWriter(file);
             System.out.println(fw.toString());

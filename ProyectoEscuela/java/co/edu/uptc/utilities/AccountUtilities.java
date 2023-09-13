@@ -89,7 +89,7 @@ public class AccountUtilities{
      * @return return the email with the extension of the university
      */
     public String generateEmail(String user){
-        return user+"@uptc.edu.co";
+        return user+"@co.edu.uptc.edu.co";
     }//cierre método
 
     /**

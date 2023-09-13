@@ -3,7 +3,7 @@ package co.edu.uptc.model;
 import java.util.Objects;
 
 /**
- *  The Account class includes the attributes that make up an uptc account, it manages
+ *  The Account class includes the attributes that make up an co.edu.uptc account, it manages
  *  the attributes of code, user, password, role in the university and institutional mail
  *  @author Nicolas Sarmiento vargas
  *  @version 1.0.0
