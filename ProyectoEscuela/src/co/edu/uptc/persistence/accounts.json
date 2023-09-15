@@ -1,0 +1,30 @@
+[
+  {
+    "id": 192038001,
+    "userName": "manuel.martinez",
+    "password":"Masfx83",
+    "role": "STUDENT",
+    "email": "manuel.martinez@uptc.edu.co"
+  },
+  {
+    "id": 16287921,
+    "userName": "maria.rodriguez",
+    "password":"AJsv92  ",
+    "role": "STUDENT",
+    "email": "maria.rodriguez@uptc.edu.co"
+  },
+  {
+    "id": 19283023,
+    "userName": "johana.torres",
+    "password":"JKJfsdhf334",
+    "role": "PROFESSOR",
+    "email": "johana.torres@uptc.edu.co"
+  },
+  {
+    "id": 16585938,
+    "userName": "laura.castillo",
+    "password":"jaklsBJ832",
+    "role": "ADMINISTRATOR",
+    "email": "laura.castillo@uptc.edu.co"
+  }
+]

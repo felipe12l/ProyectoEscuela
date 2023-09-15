@@ -91,6 +91,7 @@ public class LoginView {
                 |\t2.see accounts\t\t|
                 |\t3.change password\t|
                 |\t4.add agreements\t|
+                |\t5.see agreements\t|
                 |\t0.logout\t\t\t|
                 ========================""";
         int decision,role;
@@ -123,6 +124,9 @@ public class LoginView {
                     System.out.println("Input link");
                     String r4=this.util.inputStringWithS("Input: ");
                     cc.addCovenant(r,r1,r2,r3,r4,option);
+                    break;
+                case 5:
+                    System.out.println(cc.seeCovenants());
                     break;
                 case 0:
                     System.out.println(this.logOut() ? "Logging out" : "Error. Try again");

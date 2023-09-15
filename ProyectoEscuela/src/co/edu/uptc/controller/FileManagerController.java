@@ -74,6 +74,43 @@ public class FileManagerController {
 
     }
 
+    public boolean writeJsonFileCovenant(String filename,Covenant covenant){
+        JsonArray arr = new JsonArray();
+        String content = read(filename);
+
+        if(content != null){
+            arr = JsonParser.parseString(content).getAsJsonArray();
+        }
+        JsonObject json = gson.toJsonTree(covenant).getAsJsonObject();
+        arr.add(json);
+        try{
+            PrintWriter pw = new PrintWriter(new FileWriter(RUTE+filename+EXTENSION ));
+            pw.println(arr);
+            pw.close();
+            return true;
+        }catch (IOException f){
+            f.printStackTrace();
+            return false;
+        }
+
+    }
+    public String read(String fileName){
+        try{
+            String resolve = "";
+            String nextLine = "";
+            BufferedReader br = new BufferedReader(new FileReader(RUTE+fileName+EXTENSION));
+            nextLine= br.readLine();
+            while (nextLine != null){
+                resolve += "\n" + nextLine;
+                nextLine = br.readLine();
+            }
+            br.close();
+            return resolve.replaceFirst("\n", "");
+        }catch (IOException e){
+            return null;
+        }
+    }
+
 
 }
 
