@@ -55,6 +55,7 @@ public class FileManagerController {
             return false;
         }
     }
+
     /**
      *
      * @param fileName this param is used to assign the name of the file
@@ -78,14 +79,14 @@ public class FileManagerController {
 
     }
 
-    public boolean writeJsonFileCovenant(String filename, Covenant covenant){
+    public boolean writeJsonFileCovenant(String filename, HashSet<Covenant> covenants){
         JsonArray arr = new JsonArray();
         String content = read(filename);
 
         if(content != null){
             arr = JsonParser.parseString(content).getAsJsonArray();
         }
-        JsonObject json = gson.toJsonTree(covenant).getAsJsonObject();
+        JsonObject json = gson.toJsonTree(covenants).getAsJsonObject();
         arr.add(json);
         try{
             PrintWriter pw = new PrintWriter(new FileWriter(RUTE+filename+EXTENSION ));
@@ -114,6 +115,7 @@ public class FileManagerController {
             return null;
         }
     }
+
 
 
 }

@@ -11,10 +11,11 @@ import java.util.Random;
 
 
 public class CovenantController {
-
+    private FileManagerController fmc;
     private HashSet<Covenant>covenants;
     private ArrayList<Category>categories;
     public CovenantController() {
+        fmc=new FileManagerController();
         categories=prechargeCategories();
         covenants=preChargeCovenants();
     }
@@ -67,6 +68,7 @@ public class CovenantController {
 
         Covenant c=new Covenant(tittle, contact, nameofCreator,description,link,categories.get(position));
         covenants.add(c);
+        fmc.writeJsonFileCovenant("Covenants",covenants);
     }
 
 }

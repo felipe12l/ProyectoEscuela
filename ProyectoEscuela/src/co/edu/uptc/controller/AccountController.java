@@ -33,9 +33,8 @@ public class AccountController {
         fmc.writeJsonFileAccounts("accounts",accounts);
     }
     public boolean loadAccounts(){
-
         accounts=fmc.getFromFileAccounts("accounts");
-        return true;
+            return true;
     }
 
     /**
