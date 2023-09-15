@@ -2,6 +2,7 @@ package co.edu.uptc.controller;
 
 import co.edu.uptc.model.Category;
 import co.edu.uptc.model.Covenant;
+import com.google.gson.Gson;
 
 
 import java.util.ArrayList;
@@ -11,26 +12,13 @@ import java.util.Random;
 
 
 public class CovenantController {
-    private FileManagerController fmc;
-    private HashSet<Covenant>covenants;
-    private ArrayList<Category>categories;
-    public CovenantController() {
-        fmc=new FileManagerController();
-        categories=prechargeCategories();
-        covenants=preChargeCovenants();
-    }
 
-    /**
-     *method just for charge the initial covenants
-     *
-     * @return auxiliarTM, this is a treemap which contains the initial data
-     */
-    private HashSet<Covenant>preChargeCovenants(){
-        HashSet<Covenant> auxiliarTM=new HashSet<>();
-        Category cry=asignCategory();
-        Covenant c=new Covenant("name","contact","admin","descripted","link123",cry);
-        auxiliarTM.add(c);
-        return auxiliarTM;
+    private ArrayList<Category>categories;
+    private static final String fileName = "Covenants";
+    private FileManagerController fmc;
+    public CovenantController() {
+        categories=prechargeCategories();
+        fmc = new FileManagerController();
     }
 
     /**
@@ -60,15 +48,27 @@ public class CovenantController {
     public String showDataCategoryNames(){
         String s="";
         for (int i=0;i<categories.size();i++) {
-            s=s+"\n"+i+"."+categories.get(i).nameToString();
+            s=s+"\n"+(i + 1)+"."+categories.get(i).nameToString();
         }
         return s;
     }
     public void addCovenant(String tittle, String contact, String nameofCreator, String description, String link,int position){
-
-        Covenant c=new Covenant(tittle, contact, nameofCreator,description,link,categories.get(position));
-        covenants.add(c);
-        fmc.writeJsonFileCovenant("Covenants",covenants);
+        Gson gson = new Gson();
+        Covenant c=new Covenant(tittle, contact, nameofCreator,description,link,categories.get(position-1));
+        fmc.writeJsonFileCovenant(fileName,c);
     }
 
+    public String seeCovenants(){
+        Gson gson = new Gson();
+        String response = fmc.read(fileName);
+        if(response == null) return "there is no covenants";
+        Covenant[] covenants = gson.fromJson(response, Covenant[].class);
+        response = "";
+        int index = 1;
+        for (Covenant ch: covenants){
+            response += "\n"+ index + ". " + ch.toString();
+            index++;
+        }
+        return response.replaceFirst("\n","");
+    }
 }

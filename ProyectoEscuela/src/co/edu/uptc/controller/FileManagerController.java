@@ -79,7 +79,7 @@ public class FileManagerController {
 
     }
 
-    public boolean writeJsonFileCovenant(String filename, HashSet<Covenant> covenants){
+    public boolean writeJsonFileCovenant(String filename, Covenant covenants){
         JsonArray arr = new JsonArray();
         String content = read(filename);
 
