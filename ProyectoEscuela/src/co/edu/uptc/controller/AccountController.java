@@ -1,11 +1,13 @@
-package co.edu.uptc.controller.old;
+package co.edu.uptc.controller;
 
 import co.edu.uptc.controller.FileManagerController;
 import co.edu.uptc.model.Account;
 import co.edu.uptc.utilities.AccountUtilities;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 
 /**
  * The Account Controller class allows to manage a collection of accounts
@@ -28,7 +30,7 @@ public class AccountController {
         this.utility = new AccountUtilities();
         this.accounts = new HashSet<>();
         this.fmc=new FileManagerController();
-        fmc.writeJsonFileAccounts("accounts",accounts);
+        fmc.writeJsonFileAccounts("account",accounts);
     }
     public boolean loadAccounts(){
 
@@ -137,6 +139,7 @@ public class AccountController {
                 tempAccount.setPassword(newPassword);
                 this.accounts.remove(acc);
                 this.accounts.add(tempAccount);
+
                 return true;
             };
         }

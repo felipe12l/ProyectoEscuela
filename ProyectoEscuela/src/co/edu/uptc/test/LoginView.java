@@ -1,8 +1,8 @@
 
 package co.edu.uptc.test;
 
-import co.edu.uptc.controller.old.CovenantController;
-import co.edu.uptc.controller.old.LoginController;
+import co.edu.uptc.controller.CovenantController;
+import co.edu.uptc.controller.LoginController;
 import co.edu.uptc.utilities.InputLibrary;
 
 /**
@@ -126,7 +126,7 @@ public class LoginView {
                     cc.addCovenant(r,r1,r2,r3,r4,option);
                     break;
                 case 5:
-                    System.out.println(cc.seeCovenants());
+
                     break;
                 case 0:
                     System.out.println(this.logOut() ? "Logging out" : "Error. Try again");

@@ -1,6 +1,10 @@
 package co.edu.uptc.controller;
 import co.edu.uptc.model.Account;
+import co.edu.uptc.model.Covenant;
 import co.edu.uptc.model.Person;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.Gson;
 
@@ -15,7 +19,7 @@ import java.util.HashSet;
 public class FileManagerController {
     private Gson gson;
 
-    public final String RUTE = "src\\co\\edu\\uptc\\persistence\\", EXTENSION = ".json";
+    public final String RUTE = "D:\\Users\\YENNY BECERRA\\Desktop\\ProyectoEscuela\\ProyectoEscuela\\src\\co\\edu\\uptc\\persistence\\", EXTENSION = ".json";
     public FileManagerController(){
         gson=new Gson();
     }
@@ -60,10 +64,10 @@ public class FileManagerController {
      */
     public boolean writeJsonFileAccounts(String fileName,HashSet<Account> accounts){
         String sJson= gson.toJson(accounts);
-        File file =new File("C:\\Users\\Sala7\\Desktop\\ProyectoEscuela\\ProyectoEscuela\\src\\co\\edu\\uptc\\persistence\\"+fileName+EXTENSION);
+        File file =new File(RUTE+fileName+EXTENSION);
         try{
             FileWriter fw=new FileWriter(file);
-            System.out.println(fw.toString());
+            System.out.println();
             fw.write(sJson);
             return true;
 
@@ -74,7 +78,7 @@ public class FileManagerController {
 
     }
 
-    public boolean writeJsonFileCovenant(String filename,Covenant covenant){
+    public boolean writeJsonFileCovenant(String filename, Covenant covenant){
         JsonArray arr = new JsonArray();
         String content = read(filename);
 
