@@ -1,4 +1,5 @@
 # ProyectoEscuela
 # Andrés Felipe Luna
 # Diego Andrés Combariza
-# Nicolas Sarmiento 
+# Nicolas Tinjaca
+
