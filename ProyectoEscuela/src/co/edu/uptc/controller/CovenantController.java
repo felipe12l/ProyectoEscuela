@@ -1,4 +1,4 @@
-package co.edu.uptc.controller.old;
+package co.edu.uptc.controller;
 
 import co.edu.uptc.model.Category;
 import co.edu.uptc.model.Covenant;

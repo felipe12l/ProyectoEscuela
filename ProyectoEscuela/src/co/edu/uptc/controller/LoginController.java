@@ -1,4 +1,4 @@
-package co.edu.uptc.controller.old;
+package co.edu.uptc.controller;
 import co.edu.uptc.model.Account;
 import co.edu.uptc.model.Person;
 import co.edu.uptc.persistence.Roles;
