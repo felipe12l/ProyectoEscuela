@@ -19,7 +19,7 @@ import java.util.HashSet;
 public class FileManagerController {
     private Gson gson;
 
-    public final String RUTE = "D:\\Users\\YENNY BECERRA\\Desktop\\ProyectoEscuela\\ProyectoEscuela\\src\\co\\edu\\uptc\\persistence\\", EXTENSION = ".json";
+    public final String RUTE = "ProyectoEscuela\\src\\co\\edu\\uptc\\persistence\\", EXTENSION = ".json";
     public FileManagerController(){
         gson=new Gson();
     }

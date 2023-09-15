@@ -30,7 +30,7 @@ public class AccountController {
         this.utility = new AccountUtilities();
         this.accounts = new HashSet<>();
         this.fmc=new FileManagerController();
-        fmc.writeJsonFileAccounts("account",accounts);
+        fmc.writeJsonFileAccounts("accounts",accounts);
     }
     public boolean loadAccounts(){
 
