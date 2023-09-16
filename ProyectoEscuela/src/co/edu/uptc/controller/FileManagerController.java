@@ -2,11 +2,8 @@ package co.edu.uptc.controller;
 import co.edu.uptc.model.Account;
 import co.edu.uptc.model.Covenant;
 import co.edu.uptc.model.Person;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
+import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
-import com.google.gson.Gson;
 
 import java.io.*;
 import java.util.HashSet;
@@ -19,73 +16,34 @@ import java.util.HashSet;
 public class FileManagerController {
     private Gson gson;
 
-    public final String RUTE = "D:\\Users\\YENNY BECERRA\\Desktop\\ProyectoEscuela\\ProyectoEscuela\\src\\co\\edu\\uptc\\persistence\\", EXTENSION = ".json";
+    public final String RUTE = "ProyectoEscuela\\src\\co\\edu\\uptc\\persistence\\", EXTENSION = ".json";
     public FileManagerController(){
         gson=new Gson();
     }
-    public HashSet<Account> getFromFileAccounts(String fileName) {
-        HashSet< Account> auxiliar=new HashSet<>();
-        try {
-            auxiliar=gson.fromJson(new FileReader(RUTE+fileName+EXTENSION),new TypeToken<HashSet<Account>>(){}.getType());
 
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        return auxiliar;
-    }
-    public HashSet<Person> getFromFilePersons(String fileName){
-        HashSet<Person> auxiliar=new HashSet<>();
-        try {
-            auxiliar=gson.fromJson(new FileReader(RUTE+fileName+EXTENSION),new TypeToken<HashSet<Person>>(){}.getType());
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        return auxiliar;
-    }
-    public boolean writeJsonFilePerson(String fileName,HashSet<Person> persons){
-        String sJson= gson.toJson(persons);
+    public boolean create(String fileName){
+        File file = new File(fileName);
         try{
-            FileWriter fw=new FileWriter(RUTE+fileName+EXTENSION);
-            fw.write(sJson);
+            PrintWriter printWriter = new PrintWriter(new FileWriter(RUTE+fileName+EXTENSION, true));
+            printWriter.close();
             return true;
-
-        } catch (IOException e) {
+        }catch (FileNotFoundException e){
+            e.printStackTrace();
+            return false;
+        }catch (IOException e){
             e.printStackTrace();
             return false;
         }
     }
-    /**
-     *
-     * @param fileName this param is used to assign the name of the file
-     * @param accounts this param is the accounts in the system
-     * @return a boolean value to know if the file has been created or modified
-     * successfully
-     */
-    public boolean writeJsonFileAccounts(String fileName,HashSet<Account> accounts){
-        String sJson= gson.toJson(accounts);
-        File file =new File(RUTE+fileName+EXTENSION);
-        try{
-            FileWriter fw=new FileWriter(file);
-            System.out.println();
-            fw.write(sJson);
-            return true;
 
-        } catch (IOException e) {
-            e.printStackTrace();
-            return false;
-        }
-
-    }
-
-    public boolean writeJsonFileCovenant(String filename, Covenant covenant){
+    public boolean writeJsonFile(String filename, Object object, boolean overwrite){
         JsonArray arr = new JsonArray();
         String content = read(filename);
 
-        if(content != null){
+        if(content != null && !overwrite){
             arr = JsonParser.parseString(content).getAsJsonArray();
         }
-        JsonObject json = gson.toJsonTree(covenant).getAsJsonObject();
+        JsonObject json = gson.toJsonTree(object).getAsJsonObject();
         arr.add(json);
         try{
             PrintWriter pw = new PrintWriter(new FileWriter(RUTE+filename+EXTENSION ));

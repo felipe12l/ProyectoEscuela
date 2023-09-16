@@ -3,6 +3,7 @@ package co.edu.uptc.controller;
 import co.edu.uptc.model.Account;
 import co.edu.uptc.model.Suggestion;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -17,13 +18,16 @@ import java.util.List;
 public  class SuggestionController {
 
 
-private ArrayList<Suggestion> suggestions;
+    private ArrayList<Suggestion> suggestions;
+    private static final String fileName = "Suggestions";
+    private FileManagerController fmc;
 
     /**
      * Constructs a new SuggestionController with an empty list of suggestions.
      */
     public SuggestionController() {
         this.suggestions = new ArrayList<>();
+        fmc = new FileManagerController();
     }
 
     /**
@@ -45,16 +49,13 @@ private ArrayList<Suggestion> suggestions;
      * Creates a new suggestion with the provided message, date, and associated account,
      * and adds it to the list of suggestions in the SuggestionController.
      * @param message The content of the suggestion.
-     * @param date The date when the suggestion was made.
      * @param account The Account object representing the student who made the suggestion.
      * @return true if the suggestion was successfully created and added, false otherwise.
      */
-    public boolean createSuggestion(String message, String date, Account account) {
-        Suggestion newSuggestion = new Suggestion(date, message, account);
-        newSuggestion.setDate(date);
-        newSuggestion.setContent(message);
-        newSuggestion.setAccount(account);
-        return suggestions.add(newSuggestion);
+    public boolean createSuggestion(String message, Account account) {
+        Date date = new Date();
+        Suggestion newSuggestion = new Suggestion(date.toString(), message, account);
+        return fmc.writeJsonFile(fileName,newSuggestion,false);
     }
 }
 

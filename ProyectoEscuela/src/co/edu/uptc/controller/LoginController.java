@@ -23,7 +23,6 @@ public class LoginController {
         this.loggedAcount = new Account();
         this.acc = new AccountController();
         this.personControler = new PersonController();
-        this.acc.loadAccounts();
     }
     /**
      * Main method, check the name and count if it matches
@@ -175,9 +174,6 @@ public class LoginController {
      /**
      *Method to preload students, it works for testing
     */
-    public void loadAccounts(){
-        acc.loadAccounts();
-    }
 
 
    

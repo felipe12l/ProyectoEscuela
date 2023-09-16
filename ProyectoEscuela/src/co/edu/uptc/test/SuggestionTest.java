@@ -112,13 +112,10 @@ public class SuggestionTest {
                     break;
                 case 3:
                     System.out.println("Creating a suggestion...");
-                    System.out.println("Please input the date");
-                    String date = sc.next();
-                    sc.nextLine();
                     System.out.println("Please input the suggestion");
                     String suggestion = sc.nextLine();
                     Account currentAccount = loginController.getCurrentAccount();
-                    sC.createSuggestion(suggestion, date,currentAccount);
+                    sC.createSuggestion(suggestion, currentAccount);
                     break;
                 default:
                     System.out.println("Invalid option, try again.");

@@ -2,7 +2,12 @@ package co.edu.uptc.controller;
 
 import co.edu.uptc.controller.FileManagerController;
 import co.edu.uptc.model.Account;
+import co.edu.uptc.model.Covenant;
 import co.edu.uptc.utilities.AccountUtilities;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -19,8 +24,9 @@ import java.util.List;
 
 public class AccountController {
     private FileManagerController fmc;
-    private HashSet<Account> accounts;
     private AccountUtilities utility;
+    private Gson gson;
+    private static final String fileName = "accounts";
     private String username = "";
     private String password = "";
 
@@ -28,14 +34,12 @@ public class AccountController {
 
     public AccountController(){
         this.utility = new AccountUtilities();
-        this.accounts = new HashSet<>();
         this.fmc=new FileManagerController();
-        fmc.writeJsonFileAccounts("account",accounts);
+        gson = new Gson();
     }
-    public boolean loadAccounts(){
 
-        accounts=fmc.getFromFileAccounts("accounts");
-        return true;
+    public void loadAdminAccount(){
+        fmc.writeJsonFile(fileName, new Account("16585938","laura.castillo","jaklsBJ832","ADMINISTRATOR","laura.castillo@uptc.edu.co"), false);
     }
 
     /**
@@ -49,6 +53,8 @@ public class AccountController {
      */
     public boolean addAccount(String id, String name, String lastName, String role){
         String email = "";
+        String content = fmc.read(fileName);
+        ArrayList<Account> accounts = new ArrayList<>(Arrays.asList(gson.fromJson(content,Account[].class)));
 
         id = id.toLowerCase();
         name = this.utility.cleanNames(name);
@@ -61,14 +67,12 @@ public class AccountController {
         this.password = this.utility.genNewPassword(this.getAllpasswords());
 
         if (!this.utility.validateId(id) || !this.utility.validateName(name) || !this.utility.validateName(lastName) || !this.utility.validatePassword(this.password)
-        || !this.utility.validateRole(role)) return false;
+                || !this.utility.validateRole(role)) return false;
 
         Account newAccount = new Account(id, username, password, role, email);
+        if (accounts.contains(newAccount)) return false;
 
-        if (this.accounts.contains(newAccount)) return false;
-        this.accounts.add(newAccount);
-        fmc.writeJsonFileAccounts("accounts",accounts);
-        return true;
+        return fmc.writeJsonFile(fileName,newAccount, false);
     }
 
     /**
@@ -93,13 +97,17 @@ public class AccountController {
      * @return Object of type Account, said object will be null, if it is not found in the collection
      */
     public Account findAccount(String username, String password){
-        for (Account acc : this.accounts){
+        String content = fmc.read(fileName);
+        Account[] accounts = gson.fromJson(content,Account[].class);
+        for (Account acc : accounts){
             if (acc.getUserName().equals(username) && acc.getPassword().equals(password)) return acc;
         }
         return null;
     }
     public Account findAccountById(String id){
-        for(Account acc : this.accounts){
+        String content = fmc.read(fileName);
+        Account[] accounts = gson.fromJson(content,Account[].class);
+        for(Account acc : accounts){
             if (acc.getId().equals(id)){
                 return acc;
             }
@@ -114,11 +122,17 @@ public class AccountController {
      * @return true if the account was deleted, false if it was not deleted or not found
      */
     public boolean removeAccount(String username, String password){
+        String content = fmc.read(fileName);
+        ArrayList<Account> accounts = new ArrayList<>(Arrays.asList(gson.fromJson(content,Account[].class)));
         Account accountToRemove = this.findAccount(username, password);
 
         if (accountToRemove == null) return false;
 
-        return this.accounts.remove(accountToRemove);
+        accounts.remove(accountToRemove);
+
+        JsonArray array = gson.toJsonTree(accounts).getAsJsonArray();
+
+        return fmc.writeJsonFile(fileName, array,true);
     }
 
     /**
@@ -129,21 +143,22 @@ public class AccountController {
      * @return true if the change was successful, false if the account was not found or the new password is invalid
      */
     public boolean setNewPassword(String username, String password, String newPassword){
+        String content = fmc.read(fileName);
+        ArrayList<Account> accounts = new ArrayList<>(Arrays.asList(gson.fromJson(content,Account[].class)));
         Account accountSetPassword = this.findAccount(username, password);
         if (accountSetPassword == null) return false;
         if (!this.utility.validatePassword(newPassword)) return false;
 
-        for (Account acc : this.accounts){
+        for (Account acc : accounts){
             if (acc.equals(accountSetPassword)){
                 Account tempAccount = this.cloneAccount(acc);
                 tempAccount.setPassword(newPassword);
-                this.accounts.remove(acc);
-                this.accounts.add(tempAccount);
-
-                return true;
+                accounts.remove(acc);
+                accounts.add(tempAccount);
             };
         }
-        return false;
+        JsonArray array = gson.toJsonTree(accounts).getAsJsonArray();
+        return fmc.writeJsonFile(fileName,array, true);
     }
     /**
      * Small utility that is used in changing the password,
@@ -162,8 +177,10 @@ public class AccountController {
      * @Author  Nicolas Sarmiento : Nicolas-Sarmiento
      */
     public String[] getUsernames(){
-        String[] usernames = new String[this.accounts.size()];
-        ArrayList<Account> listAccount = new ArrayList<>(this.accounts);
+        String content = fmc.read(fileName);
+        ArrayList<Account> accounts = new ArrayList<>(Arrays.asList(gson.fromJson(content,Account[].class)));
+        String[] usernames = new String[accounts.size()];
+        ArrayList<Account> listAccount = new ArrayList<>(accounts);
         for (int i = 0; i < usernames.length; i++){
             usernames[i] = listAccount.get(i).getUserName();
         }
@@ -171,8 +188,10 @@ public class AccountController {
     }
 
     public String showAccounts(){
+        String content = fmc.read(fileName);
+        Account[] accounts = gson.fromJson(content,Account[].class);
         String accountsInfo = "{";
-        for (Account acc : this.accounts){
+        for (Account acc : accounts){
             accountsInfo += acc.toString() + "\n";
         }
         accountsInfo += "}";
@@ -180,8 +199,10 @@ public class AccountController {
     }
 
     private String[] getAllpasswords(){
-        String[] passwords = new String[this.accounts.size()];
-        ArrayList<Account> listAccount = new ArrayList<>(this.accounts);
+        String content = fmc.read(fileName);
+        ArrayList<Account> accounts = new ArrayList<>(Arrays.asList(gson.fromJson(content,Account[].class)));
+        String[] passwords = new String[accounts.size()];
+        ArrayList<Account> listAccount = new ArrayList<>(accounts);
         for (int i = 0; i < passwords.length; i++){
             passwords[i] = listAccount.get(i).getPassword();
         }
