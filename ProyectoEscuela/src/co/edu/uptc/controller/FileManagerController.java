@@ -43,8 +43,12 @@ public class FileManagerController {
         if(content != null && !overwrite){
             arr = JsonParser.parseString(content).getAsJsonArray();
         }
-        JsonObject json = gson.toJsonTree(object).getAsJsonObject();
-        arr.add(json);
+        if (object instanceof Object[] || object.getClass().isArray()) {
+            arr = gson.toJsonTree(object).getAsJsonArray();
+        } else {
+            JsonObject json = gson.toJsonTree(object).getAsJsonObject();
+            arr.add(json);
+        }
         try{
             PrintWriter pw = new PrintWriter(new FileWriter(RUTE+filename+EXTENSION ));
             pw.println(arr);

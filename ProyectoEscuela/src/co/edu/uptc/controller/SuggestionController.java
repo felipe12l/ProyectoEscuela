@@ -2,7 +2,10 @@ package co.edu.uptc.controller;
 
 import co.edu.uptc.model.Account;
 import co.edu.uptc.model.Suggestion;
+import com.google.gson.Gson;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -18,7 +21,7 @@ import java.util.List;
 public  class SuggestionController {
 
 
-    private ArrayList<Suggestion> suggestions;
+    private Gson gson;
     private static final String fileName = "Suggestions";
     private FileManagerController fmc;
 
@@ -26,24 +29,24 @@ public  class SuggestionController {
      * Constructs a new SuggestionController with an empty list of suggestions.
      */
     public SuggestionController() {
-        this.suggestions = new ArrayList<>();
         fmc = new FileManagerController();
+        gson= new Gson();
     }
 
     /**
      * Retrieves the list of suggestions stored in the SuggestionController.
      * @return A List of Suggestion objects representing the suggestions made by students.
      */
-    public List<Suggestion> getSuggestions() {
-        List<Suggestion> allSuggestions = new ArrayList<>();
-        for (Suggestion suggestion : suggestions) {
-            String suggestionDate = suggestion.getDate();
-            String suggestionMessage = suggestion.getContent();
-            Account suggestionAccount = suggestion.getAccount();
-           Suggestion newSuggestion = new Suggestion(suggestionDate, suggestionMessage, suggestionAccount);
-            allSuggestions.add(newSuggestion);
+    public String getSuggestions() {
+        String content = fmc.read(fileName);
+        Suggestion[] suggestions = gson.fromJson(content, Suggestion[].class);
+        String response = "";
+        int index = 1;
+        for (Suggestion ch: suggestions){
+            response += "\n"+ index + ". " + ch.toString();
+            index++;
         }
-        return allSuggestions;
+        return response;
     }
     /**
      * Creates a new suggestion with the provided message, date, and associated account,

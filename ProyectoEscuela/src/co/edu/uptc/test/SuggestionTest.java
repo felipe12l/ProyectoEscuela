@@ -152,12 +152,7 @@ public class SuggestionTest {
                     break;
                 case 4:
                     System.out.println("Suggestions");
-                    System.out.println(sC.getSuggestions().toString()+ "\n");
-                    List<Suggestion> suggestions = sC.getSuggestions();
-                    for (Suggestion suggestion : suggestions) {
-                        System.out.println(suggestion.toString());
-                    }
-                    System.out.println();
+                    System.out.println(sC.getSuggestions());
                     break;
                 case 5:
                     System.out.println(loginView.logOut() ? "Logging out" : "Error. Try again");
