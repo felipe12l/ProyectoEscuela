@@ -1,12 +1,9 @@
 package co.edu.uptc.controller;
-import co.edu.uptc.model.Account;
-import co.edu.uptc.model.Covenant;
-import co.edu.uptc.model.Person;
+
 import com.google.gson.*;
-import com.google.gson.reflect.TypeToken;
 
 import java.io.*;
-import java.util.HashSet;
+
 /***
  * The FileManagerController class is for create,read,write and modify files.
  * @author Felipe Luna

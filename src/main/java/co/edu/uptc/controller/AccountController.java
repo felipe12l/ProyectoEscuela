@@ -1,18 +1,12 @@
 package co.edu.uptc.controller;
 
-import co.edu.uptc.controller.FileManagerController;
 import co.edu.uptc.model.Account;
-import co.edu.uptc.model.Covenant;
 import co.edu.uptc.utilities.AccountUtilities;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
 
 /**
  * The Account Controller class allows to manage a collection of accounts

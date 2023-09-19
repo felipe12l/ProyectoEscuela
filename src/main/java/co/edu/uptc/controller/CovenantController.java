@@ -4,7 +4,6 @@ import co.edu.uptc.model.Category;
 import co.edu.uptc.model.Covenant;
 import com.google.gson.Gson;
 
-
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Random;
@@ -71,7 +70,7 @@ public class CovenantController {
     }
     public String seeCovenants(){
         String response = this.fmc.read(fileName);
-        if (response == null) return "There is no Champs";
+        if (response == null) return "There is no Covenants";
         Covenant[] covenants1 = gson.fromJson(response, Covenant[].class);
         response = "";
         int index = 1;
@@ -83,9 +82,6 @@ public class CovenantController {
     }
     public void addCovenant(String tittle, String contact, String nameofCreator, String description, String link,int position){
         Covenant c=new Covenant(tittle, contact, nameofCreator,description,link,categories.get(position));
-
-        String content = fmc.read(fileName);
-
         fmc.writeJsonFile(fileName,c,false);
     }
 
