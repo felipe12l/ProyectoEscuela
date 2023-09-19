@@ -13,7 +13,7 @@ import java.io.*;
 public class FileManagerController {
     private Gson gson;
 
-    public final String RUTE = "ProyectoEscuela\\src\\co\\edu\\uptc\\persistence\\", EXTENSION = ".json";
+    public final String RUTE = "./src/main/java/co/edu/uptc/persistence/", EXTENSION = ".json";
     public FileManagerController(){
         gson=new Gson();
     }
