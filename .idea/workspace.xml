@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6729a798-e111-487e-a219-100a2a7d6c45" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenRunner">
+    <option name="environmentProperties">
+      <map>
+        <entry key="JAVA_HOME" value="D:\Archivos de Programa\Java\jdk-20" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectId" id="2ViHCz7ELgEr5BHRulj59AgyUTP" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/NickG/Documents/java/uni/ProyectoEscuela",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.runner"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\NickG\Documents\java\uni\Login_Project-LoginView" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\NickG\Documents\java\uni\Login_Project-LoginView\Login\src\main\java\co\edu\uptc\test" />
+      <recent name="C:\Users\NickG\Documents\java\uni\Login_Project-LoginView\Login\src\main\java\co\edu\uptc\utilities" />
+      <recent name="C:\Users\NickG\Documents\java\uni\Login_Project-LoginView\Login\src\main\java\co\edu\uptc\persistence" />
+      <recent name="C:\Users\NickG\Documents\java\uni\Login_Project-LoginView\Login\src\main\java\co\edu\uptc\model" />
+      <recent name="C:\Users\NickG\Documents\java\uni\Login_Project-LoginView\Login\src\main\java\co\edu\uptc\model\persontypes" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn javafx:run" />
+    </option>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6729a798-e111-487e-a219-100a2a7d6c45" name="Changes" comment="" />
+      <created>1695311858195</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1695311858195</updated>
+    </task>
+    <servers />
+  </component>
+</project>
