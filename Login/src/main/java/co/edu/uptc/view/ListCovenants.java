@@ -83,6 +83,7 @@ public class ListCovenants extends Header{
 
         descriptionColum = new TableColumn<Covenant, String>("Description");
         descriptionColum.setCellValueFactory(new PropertyValueFactory<Covenant, String>("Description"));
+        descriptionColum.setPrefWidth(150);
 
         linkColum = new TableColumn<Covenant, String>("Link");
         linkColum.setCellValueFactory(new PropertyValueFactory<Covenant, String>("Link"));
