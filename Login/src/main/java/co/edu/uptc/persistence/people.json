@@ -120,6 +120,18 @@
     }
   },
   {
+    "id": "202210687",
+    "name": "Mumei",
+    "lastname": "Nanashi",
+    "account": {
+      "id": "202210687",
+      "userName": "mumei.nanashi",
+      "password": "48BIBic",
+      "role": "STUDENT",
+      "email": "mumei.nanashi@uptc.edu.co"
+    }
+  },
+  {
     "id": "2022159",
     "name": "Maria",
     "lastname": "Rodriguez Vega",

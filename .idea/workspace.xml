@@ -6,22 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="6729a798-e111-487e-a219-100a2a7d6c45" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/java/co/edu/uptc/controller/CovenantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/co/edu/uptc/controller/CovenantController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/java/co/edu/uptc/model/Covenant.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/co/edu/uptc/model/Covenant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Login/src/main/java/co/edu/uptc/persistence/Covenants.json" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/co/edu/uptc/persistence/Covenants.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/java/co/edu/uptc/view/LoginDashBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/co/edu/uptc/view/LoginDashBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/java/co/edu/uptc/view/LoginListUsers.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/co/edu/uptc/view/LoginListUsers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/java/co/edu/uptc/view/LoginView.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/co/edu/uptc/view/LoginView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/target/Login-1.0-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/target/classes/co/edu/uptc/controller/CovenantController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Login/target/classes/co/edu/uptc/controller/CovenantController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/target/classes/co/edu/uptc/controller/CovenantController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/Login/target/classes/co/edu/uptc/controller/CovenantController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/target/classes/co/edu/uptc/controller/CovenantController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Login/target/classes/co/edu/uptc/controller/CovenantController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/target/classes/co/edu/uptc/model/Covenant.class" beforeDir="false" afterPath="$PROJECT_DIR$/Login/target/classes/co/edu/uptc/model/Covenant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/target/classes/co/edu/uptc/view/LoginDashBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/Login/target/classes/co/edu/uptc/view/LoginDashBoard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/target/classes/co/edu/uptc/view/LoginView.class" beforeDir="false" afterPath="$PROJECT_DIR$/Login/target/classes/co/edu/uptc/view/LoginView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Login/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Login/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/java/co/edu/uptc/persistence/accounts.json" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/co/edu/uptc/persistence/accounts.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/java/co/edu/uptc/persistence/people.json" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/co/edu/uptc/persistence/people.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,15 +40,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;ImplementationLogin&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/NickG/Documents/java/uni/ProyectoEscuela&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.runner&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Covenants-Interface",
+    "last_opened_file_path": "C:/Users/NickG/Documents/java/uni/ProyectoEscuela",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.runner"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\NickG\Documents\java\uni\Login_Project-LoginView" />

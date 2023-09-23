@@ -96,5 +96,12 @@
     "password": "HJ23jkil",
     "role": "PROFESSOR",
     "email": "ivan.mendoza@uptc.edu.co"
+  },
+  {
+    "id": "202210687",
+    "userName": "mumei.nanashi",
+    "password": "48BIBic",
+    "role": "STUDENT",
+    "email": "mumei.nanashi@uptc.edu.co"
   }
 ]

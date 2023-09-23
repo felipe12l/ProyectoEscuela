@@ -11,5 +11,18 @@
       "name": "Convenios de Intercambio Académico",
       "description": "Acuerdos que permiten a estudiantes y profesores de la UPTC estudiar, investigar o enseñar en otras instituciones durante un período determinado."
     }
+  },
+  {
+    "Tittle": "Convenio de Colaboración Académica",
+    "Contact": "juan.perez@example.com",
+    "NameofCreator": "Juan Pérez",
+    "Description": "Este convenio establece la colaboración académica entre la Universidad XYZ y la Empresa ABC. Ambas partes acuerdan promover la investigación conjunta y la realización de proyectos educativos.",
+    "Link": "https://www.ejemplo.com/convenio.pdf",
+    "categoryName": "Convenios de Cooperación",
+    "categoryDescription": "La UPTC podría establecer acuerdos con entidades locales para promover proyectos de extensión y servicios a la comunidad, como programas de educación continua, asesoramiento técnico y social, entre otros.",
+    "category": {
+      "name": "Convenios de Cooperación",
+      "description": "La UPTC podría establecer acuerdos con entidades locales para promover proyectos de extensión y servicios a la comunidad, como programas de educación continua, asesoramiento técnico y social, entre otros."
+    }
   }
 ]
