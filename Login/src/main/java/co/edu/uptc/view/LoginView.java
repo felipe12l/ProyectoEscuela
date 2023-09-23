@@ -1,5 +1,6 @@
 package co.edu.uptc.view;
 
+import co.edu.uptc.controller.CovenantController;
 import co.edu.uptc.controller.LoginController;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -18,7 +19,10 @@ public class LoginView  extends Application implements EventHandler<ActionEvent>
     SingInView singInView;
     Stage stage;
     LoginController controller;
+    CovenantController covenantController;
     LoginListUsers loginListUsers;
+    ManageCovenants manageCovenants;
+    ListCovenants listCovenants;
     ChangePasswordOptionConfig changePassword;
     Button home;
     /**
@@ -26,6 +30,7 @@ public class LoginView  extends Application implements EventHandler<ActionEvent>
      */
     public LoginView (){
         this.controller = new LoginController();
+        this.covenantController = new CovenantController();
         this.loginPanel = new LoginPanel(this);
         this.home = new Button();
         this.home.setOnAction(this);
@@ -33,6 +38,8 @@ public class LoginView  extends Application implements EventHandler<ActionEvent>
         this.loginListUsers = new LoginListUsers(this, home);
         this.changePassword = new ChangePasswordOptionConfig(this,home);
         this.loginDashBoard = new LoginDashBoard(this);
+        this.manageCovenants = new ManageCovenants(this, this.home);
+        this.listCovenants = new ListCovenants(this,this.home);
     }
     /**
      * The entry point for the JavaFX application.
@@ -112,6 +119,15 @@ public class LoginView  extends Application implements EventHandler<ActionEvent>
         if(e.getSource() == this.loginDashBoard.btnOption2){
             this.stage.setTitle("Cuentas");
             this.stage.setScene(loginListUsers.loginListUsers());
+        }
+
+        if(e.getSource() == this.loginDashBoard.btnOption5){
+            this.stage.setTitle("Manage Convenios");
+            this.stage.setScene(manageCovenants.loginListCovenants());
+        }
+        if(e.getSource() == this.loginDashBoard.btnOption6){
+            this.stage.setTitle("ver convenios");
+            this.stage.setScene(listCovenants.loginListCovenants());
         }
 
         if(e.getSource() == this.loginDashBoard.btnOption3){

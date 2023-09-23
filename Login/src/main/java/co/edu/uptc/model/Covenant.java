@@ -3,17 +3,20 @@ package co.edu.uptc.model;
 
 
 public class Covenant {
-    private String Tittle, Contact, NameofCreator, Description, Link;
+    private String Tittle, Contact, NameofCreator, Description, Link, categoryName,categoryDescription;
 
     @Override
     public String toString() {
-        return  "Tittle='" + Tittle + '\'' +
+        return "Covenant{" +
+                "Tittle='" + Tittle + '\'' +
                 ", Contact='" + Contact + '\'' +
                 ", NameofCreator='" + NameofCreator + '\'' +
                 ", Description='" + Description + '\'' +
                 ", Link='" + Link + '\'' +
-                ", category=" + category
-                ;
+                ", categoryName='" + categoryName + '\'' +
+                ", categoryDescription='" + categoryDescription + '\'' +
+                ", category=" + category +
+                '}';
     }
 
     private Category category;
@@ -66,6 +69,14 @@ public class Covenant {
         this.category = category;
     }
 
+    public String getCategoryName() {
+        return categoryName;
+    }
+
+    public String getCategoryDescription() {
+        return categoryDescription;
+    }
+
     public Covenant() {
     }
 
@@ -75,6 +86,8 @@ public class Covenant {
         NameofCreator = nameofCreator;
         Description = description;
         Link = link;
+        categoryName = category.getName();
+        categoryDescription = category.getDescription();
         this.category = category;
     }
 

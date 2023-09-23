@@ -31,6 +31,8 @@ public class LoginDashBoard {
     Button btnOption2;
     Button btnOption3;
     Button btnOption4;
+    Button btnOption5;
+    Button btnOption6;
 
     /**
      * Constructs a LoginDashboard instance.
@@ -76,10 +78,10 @@ public class LoginDashBoard {
     private void settingContainerButtoms() {
         if(parent.controller.showRol().equals("ADMINISTRATOR")){
             settingButtomsAdministrator();
-            containerButtoms = new VBox(btnOption1, btnOption2, btnOption3, btnOption4);
+            containerButtoms = new VBox(btnOption1, btnOption2, btnOption5,btnOption3, btnOption4);
         }else{
             settingButtomsGenerals();
-            containerButtoms = new VBox(btnOption3, btnOption4);
+            containerButtoms = new VBox(btnOption3, btnOption6,btnOption4);
         }
 
         this.containerButtoms.setAlignment(Pos.CENTER);
@@ -91,13 +93,17 @@ public class LoginDashBoard {
      */
     private void settingButtomsGenerals(){
         this.btnOption3 = new Button("Change password");
+        this.btnOption6 = new Button("See covenants");
         this.btnOption4 = new Button("Logout");
 
         this.btnOption3.setFont(new Font(18));
+        this.btnOption6.setFont(new Font(18));
         this.btnOption4.setFont(new Font(18));
         VBox.setMargin(btnOption3, new Insets(15));
+        VBox.setMargin(btnOption6, new Insets(15));
         VBox.setMargin(btnOption4, new Insets(15));
         this.btnOption3.setOnAction(this.parent);
+        this.btnOption6.setOnAction(this.parent);
         this.btnOption4.setOnAction(this.parent);
     }
 
@@ -109,13 +115,18 @@ public class LoginDashBoard {
         settingButtomsGenerals();
         this.btnOption1 = new Button("Sing in accounts");
         this.btnOption2 = new Button("See accounts");
+        this.btnOption5 = new Button("Manage Covenants");
 
         VBox.setMargin(btnOption1, new Insets(15));
         VBox.setMargin(btnOption2, new Insets(15));
+        VBox.setMargin(btnOption5, new Insets(15));
+
         this.btnOption1.setFont(new Font(18));
         this.btnOption2.setFont(new Font(18));
+        this.btnOption5.setFont(new Font(18));
         this.btnOption1.setOnAction(this.parent);
         this.btnOption2.setOnAction(this.parent);
+        this.btnOption5.setOnAction(this.parent);
     }
 
     /**

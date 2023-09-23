@@ -22,9 +22,13 @@ public class CovenantController {
     private static final String fileName = "Covenants";
     public CovenantController() {
         categories=prechargeCategories();
-        covenantsList = fmc.readContentFromFile(fileName,new TypeToken<List<Covenant>>(){}.getType());
         fmc = new JsonStorageUtilities();
+        covenantsList = fmc.readContentFromFile(fileName,new TypeToken<List<Covenant>>(){}.getType());
         gson = new Gson();
+    }
+
+    public List<Covenant> getCovenantsList() {
+        return covenantsList;
     }
 
     /**
@@ -40,7 +44,7 @@ public class CovenantController {
      * this method is used to precharge the categories until we can use persistence
      * @return auxC
      */
-    private ArrayList<Category>prechargeCategories(){
+    public ArrayList<Category>prechargeCategories(){
         ArrayList<Category> auxC=new ArrayList<>();
         auxC.add(new Category("Convenios Interinstitucionales","Estos son acuerdos entre la UPTC y otras universidades, instituciones educativas o centros de investigación. Pueden abarcar colaboraciones académicas, intercambios estudiantiles y de profesores, programas conjuntos de investigación, entre otros."));
         auxC.add(new Category("Convenios de Movilidad","Acuerdos que facilitan el intercambio de estudiantes y profesores entre la UPTC y otras instituciones, permitiendo experiencias académicas en diferentes contextos."));
@@ -68,7 +72,14 @@ public class CovenantController {
         return response.replaceFirst("\n","");
     }
     public boolean addCovenant(String tittle, String contact, String nameofCreator, String description, String link,int position){
+
         Covenant c =new Covenant(tittle, contact, nameofCreator,description,link,categories.get(position));
+        if(covenantsList.contains(c)) return false;
+        covenantsList.add(c);
+        return fmc.saveDataToFile(covenantsList,fileName,new TypeToken<List<Covenant>>(){}.getType());
+    }
+    public boolean DeleteCovenant(Covenant covenant){
+        covenantsList.remove(covenant);
         return fmc.saveDataToFile(covenantsList,fileName,new TypeToken<List<Covenant>>(){}.getType());
     }
 
