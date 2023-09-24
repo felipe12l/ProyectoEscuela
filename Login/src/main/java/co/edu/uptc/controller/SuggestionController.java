@@ -7,6 +7,7 @@ import com.google.gson.Gson;
 import co.edu.uptc.utilities.*;
 import com.google.gson.reflect.TypeToken;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -18,7 +19,7 @@ import java.util.List;
  * This controller handles the logic for handling student suggestions and their storage.
  *
  * @author Diego Combariza
- * @version 1.0.0
+ * @version 1.1
  */
 public  class SuggestionController {
 
@@ -46,7 +47,8 @@ public  class SuggestionController {
         String response = "";
         int index = 1;
         for (Suggestion ch: this.suggestionsList){
-            response += "\n"+ index + ". " + ch.toString();
+            String readed = ch.isRead() ? "Leído" : "No leído";
+            response += "\n"+ index + ". " + ch.toString()+ " Estado= "+ readed;
             index++;
         }
         return response;
@@ -60,10 +62,24 @@ public  class SuggestionController {
      */
     public boolean createSuggestion(String message, Account account) {
         Date date = new Date();
-        Suggestion newSuggestion = new Suggestion(date.toString(), message, account);
+        String userName = account.getUserName();
+        String userMail = account.getEmail();
+        Object user = userName+userMail;
+        Suggestion newSuggestion = new Suggestion(date.toString(), message, user);
         suggestionsList.add(newSuggestion);
         return fmc.saveDataToFile(suggestionsList,fileName,new TypeToken<List<Suggestion>>(){}.getType());
     }
+
+    public boolean readed(Suggestion sugerencia) {
+
+        if (!sugerencia.isRead()) {
+            sugerencia.setRead(true);
+            return fmc.saveDataToFile(suggestionsList, fileName, new TypeToken<List<Suggestion>>() {
+            }.getType());
+        }
+        return false;
+    }
+
 }
 
 

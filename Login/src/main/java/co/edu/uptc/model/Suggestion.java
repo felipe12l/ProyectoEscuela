@@ -15,19 +15,20 @@ import co.edu.uptc.model.Account;
 public class Suggestion {
     private String date;
     private String content;
-    private Account account;
+    private Object usuario;
+    private boolean read = false;
     /**
      * Constructs a new Suggestion object with the provided date, content, and associated student account.
      *
      * @param date    The date when the suggestion was made.
      * @param content The content of the suggestion.
-     * @param account The Account object representing the student who made the suggestion.
+     * @param usuario The user object representing the student who made the suggestion.
      */
 
-    public Suggestion(String date, String content, Account account) {
+    public Suggestion(String date, String content, Object usuario) {
         this.date = date;
         this.content = content;
-        this.account = account;
+        this.usuario = usuario;
     }
 
     public Suggestion() {
@@ -49,11 +50,19 @@ public class Suggestion {
         this.content = content;
     }
 
-    public Account getAccount() {
-        return account;
+    public Object getsUser() {
+        return usuario;
     }
-    public void setAccount(Account account) {
-        this.account = account;
+    public void setUsuario(Object usuario) {
+        this.usuario = usuario;
+    }
+
+    public boolean isRead() {
+        return read;
+    }
+
+    public void setRead(boolean read) {
+        this.read = read;
     }
 
     @Override
@@ -61,7 +70,7 @@ public class Suggestion {
         return "Suggestion{" +
                 "date='" + date + '\'' +
                 ", content='" + content + '\'' +
-                ", student=" + account +
+                ", student=" + usuario +
                 '}';
     }
 }
