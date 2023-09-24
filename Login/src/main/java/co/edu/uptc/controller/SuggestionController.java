@@ -3,6 +3,7 @@ package co.edu.uptc.controller;
 import co.edu.uptc.model.Account;
 import co.edu.uptc.model.Person;
 import co.edu.uptc.model.Suggestion;
+import co.edu.uptc.model.persontypes.User;
 import com.google.gson.Gson;
 import co.edu.uptc.utilities.*;
 import com.google.gson.reflect.TypeToken;
@@ -29,6 +30,7 @@ public  class SuggestionController {
     private static final String fileName = "Suggestions";
     //private FileManagerController fmc;
     private JsonStorageUtilities fmc;
+    private User myUser;
 
     /**
      * Constructs a new SuggestionController with an empty list of suggestions.
@@ -37,13 +39,17 @@ public  class SuggestionController {
         fmc = new JsonStorageUtilities();
         gson= new Gson();
         suggestionsList = fmc.readContentFromFile(fileName,new TypeToken<List<Suggestion>>(){}.getType());
+        myUser = new User();
+    }
+    public  List<Suggestion> getSuggestionsList(){
+        return suggestionsList;
     }
 
     /**
      * Retrieves the list of suggestions stored in the SuggestionController.
      * @return A List of Suggestion objects representing the suggestions made by students.
      */
-    public String getSuggestions() {
+    public String seeSuggestions() {
         String response = "";
         int index = 1;
         for (Suggestion ch: this.suggestionsList){
@@ -64,13 +70,14 @@ public  class SuggestionController {
         Date date = new Date();
         String userName = account.getUserName();
         String userMail = account.getEmail();
-        Object user = userName+userMail;
-        Suggestion newSuggestion = new Suggestion(date.toString(), message, user);
+
+        User myUser = new User(userName, userMail);
+        Suggestion newSuggestion = new Suggestion(date.toString(), message, myUser);
         suggestionsList.add(newSuggestion);
         return fmc.saveDataToFile(suggestionsList,fileName,new TypeToken<List<Suggestion>>(){}.getType());
     }
 
-    public boolean readed(Suggestion sugerencia) {
+    public boolean markAsRead(Suggestion sugerencia) {
 
         if (!sugerencia.isRead()) {
             sugerencia.setRead(true);

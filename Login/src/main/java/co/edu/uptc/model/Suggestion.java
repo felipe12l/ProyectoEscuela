@@ -2,6 +2,7 @@ package co.edu.uptc.model;
 
 
 import co.edu.uptc.model.Account;
+import co.edu.uptc.model.persontypes.User;
 
 /**
  * The Suggestion class represents a suggestion made by a student. It contains information about the date,
@@ -15,7 +16,7 @@ import co.edu.uptc.model.Account;
 public class Suggestion {
     private String date;
     private String content;
-    private Object usuario;
+    private User usuario;
     private boolean read = false;
     /**
      * Constructs a new Suggestion object with the provided date, content, and associated student account.
@@ -25,7 +26,7 @@ public class Suggestion {
      * @param usuario The user object representing the student who made the suggestion.
      */
 
-    public Suggestion(String date, String content, Object usuario) {
+    public Suggestion(String date, String content, User usuario) {
         this.date = date;
         this.content = content;
         this.usuario = usuario;
@@ -53,7 +54,7 @@ public class Suggestion {
     public Object getsUser() {
         return usuario;
     }
-    public void setUsuario(Object usuario) {
+    public void setUsuario(User usuario) {
         this.usuario = usuario;
     }
 
