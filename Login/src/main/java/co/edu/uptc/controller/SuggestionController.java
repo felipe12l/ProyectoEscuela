@@ -3,10 +3,12 @@ package co.edu.uptc.controller;
 import co.edu.uptc.model.Account;
 import co.edu.uptc.model.Person;
 import co.edu.uptc.model.Suggestion;
+import co.edu.uptc.model.persontypes.User;
 import com.google.gson.Gson;
 import co.edu.uptc.utilities.*;
 import com.google.gson.reflect.TypeToken;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -18,7 +20,7 @@ import java.util.List;
  * This controller handles the logic for handling student suggestions and their storage.
  *
  * @author Diego Combariza
- * @version 1.0.0
+ * @version 1.1
  */
 public  class SuggestionController {
 
@@ -28,6 +30,7 @@ public  class SuggestionController {
     private static final String fileName = "Suggestions";
     //private FileManagerController fmc;
     private JsonStorageUtilities fmc;
+    private User myUser;
 
     /**
      * Constructs a new SuggestionController with an empty list of suggestions.
@@ -36,17 +39,22 @@ public  class SuggestionController {
         fmc = new JsonStorageUtilities();
         gson= new Gson();
         suggestionsList = fmc.readContentFromFile(fileName,new TypeToken<List<Suggestion>>(){}.getType());
+        myUser = new User();
+    }
+    public  List<Suggestion> getSuggestionsList(){
+        return suggestionsList;
     }
 
     /**
      * Retrieves the list of suggestions stored in the SuggestionController.
      * @return A List of Suggestion objects representing the suggestions made by students.
      */
-    public String getSuggestions() {
+    public String seeSuggestions() {
         String response = "";
         int index = 1;
         for (Suggestion ch: this.suggestionsList){
-            response += "\n"+ index + ". " + ch.toString();
+            String readed = ch.isRead() ? "Leído" : "No leído";
+            response += "\n"+ index + ". " + ch.toString()+ " Estado= "+ readed;
             index++;
         }
         return response;
@@ -60,10 +68,28 @@ public  class SuggestionController {
      */
     public boolean createSuggestion(String message, Account account) {
         Date date = new Date();
-        Suggestion newSuggestion = new Suggestion(date.toString(), message, account);
+        String userName = account.getUserName();
+        String userMail = account.getEmail();
+
+        User myUser = new User(userName, userMail);
+        Suggestion newSuggestion = new Suggestion(date.toString(), message, myUser);
         suggestionsList.add(newSuggestion);
         return fmc.saveDataToFile(suggestionsList,fileName,new TypeToken<List<Suggestion>>(){}.getType());
     }
+
+    public boolean markAsRead(Suggestion sugerencia) {
+        if (sugerencia == null){
+            return false;
+        }
+
+        if (!sugerencia.isRead()) {
+            sugerencia.setRead(true);
+            return fmc.saveDataToFile(suggestionsList, fileName, new TypeToken<List<Suggestion>>() {
+            }.getType());
+        }
+        return false;
+    }
+
 }
 
 
