@@ -2,14 +2,10 @@ package co.edu.uptc.view;
 
 import co.edu.uptc.controller.SuggestionController;
 import co.edu.uptc.model.Suggestion;
-import javafx.beans.property.BooleanProperty;
-import javafx.beans.property.SimpleBooleanProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.CheckBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
@@ -31,7 +27,6 @@ public class ManageSuggestion extends Header{
     TableColumn readStatus;
     Button markAsReadButton;
     SuggestionController mySugCo;
-    CheckBox checkBox;
     ObservableList<Suggestion> suggestions = FXCollections.observableArrayList();
     /**
      * Constructs a Header instance with a provided home button.
@@ -44,7 +39,6 @@ public class ManageSuggestion extends Header{
         creationColumns();
         mySugCo = new SuggestionController();
     }
-
     public Scene ListSuggestions(){
         updateTable();
         table.setItems(suggestions);
@@ -56,8 +50,6 @@ public class ManageSuggestion extends Header{
         VBox root = new VBox(header, borderPane);
         Scene scene = new Scene(root, 1000, 600);
         scene.getStylesheets().add(new File("./styles/ManageCovenants.css").toURI().toString());
-
-
         return scene;
     }
     public void updateTable(){
@@ -92,7 +84,6 @@ public class ManageSuggestion extends Header{
                     super.updateItem(item, empty);
 
                     if (!empty) {
-                        // Crea un nuevo botón.
                         markAsReadButton = new Button("mark as read");
                         this.setGraphic(markAsReadButton);
                         markAsReadButton.setOnAction(event -> {
@@ -104,7 +95,6 @@ public class ManageSuggestion extends Header{
                                 markAsReadButton.setText("");
                                 markAsReadButton.graphicProperty().setValue(new Label("readed"));
                             }
-                            return;
                         });
 
                     } else {
@@ -113,8 +103,6 @@ public class ManageSuggestion extends Header{
                 }
             };
         });
-
-
 
         table.getColumns().add(DateColum);
         table.getColumns().add(contentColum);
