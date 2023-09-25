@@ -33,6 +33,8 @@ public class LoginDashBoard {
     Button btnOption4;
     Button btnOption5;
     Button btnOption6;
+    Button btnOption7;
+
 
     /**
      * Constructs a LoginDashboard instance.
@@ -78,7 +80,7 @@ public class LoginDashBoard {
     private void settingContainerButtoms() {
         if(parent.controller.showRol().equals("ADMINISTRATOR")){
             settingButtomsAdministrator();
-            containerButtoms = new VBox(btnOption1, btnOption2, btnOption5,btnOption3, btnOption4);
+            containerButtoms = new VBox(btnOption1, btnOption2, btnOption5,btnOption7, btnOption4);
         }else{
             settingButtomsGenerals();
             containerButtoms = new VBox(btnOption3, btnOption6,btnOption4);
@@ -116,17 +118,21 @@ public class LoginDashBoard {
         this.btnOption1 = new Button("Sing in accounts");
         this.btnOption2 = new Button("See accounts");
         this.btnOption5 = new Button("Manage Covenants");
+        this.btnOption7 = new Button("Read Suggestions");
 
         VBox.setMargin(btnOption1, new Insets(15));
         VBox.setMargin(btnOption2, new Insets(15));
         VBox.setMargin(btnOption5, new Insets(15));
+        VBox.setMargin(btnOption7, new Insets(15));
 
         this.btnOption1.setFont(new Font(18));
         this.btnOption2.setFont(new Font(18));
         this.btnOption5.setFont(new Font(18));
+        this.btnOption7.setFont(new Font(18));
         this.btnOption1.setOnAction(this.parent);
         this.btnOption2.setOnAction(this.parent);
         this.btnOption5.setOnAction(this.parent);
+        this.btnOption7.setOnAction(this.parent);
     }
 
     /**

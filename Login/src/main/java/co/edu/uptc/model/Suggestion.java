@@ -1,8 +1,8 @@
 package co.edu.uptc.model;
 
 
-import co.edu.uptc.model.Account;
 import co.edu.uptc.model.persontypes.User;
+import javafx.beans.property.SimpleBooleanProperty;
 
 /**
  * The Suggestion class represents a suggestion made by a student. It contains information about the date,
@@ -10,14 +10,15 @@ import co.edu.uptc.model.persontypes.User;
  * This class provides methods to get and set the date, content, and associated student account.
  *
  * @author Diego Combariza
- * @version 1.0.0
+ * @version 1.1.0
  */
 
 public class Suggestion {
     private String date;
     private String content;
-    private User usuario;
-    private boolean read = false;
+    private String userName;
+    private String contactEmail;
+    private boolean read;
     /**
      * Constructs a new Suggestion object with the provided date, content, and associated student account.
      *
@@ -29,7 +30,9 @@ public class Suggestion {
     public Suggestion(String date, String content, User usuario) {
         this.date = date;
         this.content = content;
-        this.usuario = usuario;
+        this.userName = usuario.getName();
+        this.contactEmail = usuario.getEmail();
+        this.read = false;
     }
 
     public Suggestion() {
@@ -51,11 +54,20 @@ public class Suggestion {
         this.content = content;
     }
 
-    public Object getsUser() {
-        return usuario;
+    public String getUserName() {
+        return userName;
     }
-    public void setUsuario(User usuario) {
-        this.usuario = usuario;
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getContactEmail() {
+        return contactEmail;
+    }
+
+    public void setContactEmail(String contactEmail) {
+        this.contactEmail = contactEmail;
     }
 
     public boolean isRead() {
@@ -71,7 +83,9 @@ public class Suggestion {
         return "Suggestion{" +
                 "date='" + date + '\'' +
                 ", content='" + content + '\'' +
-                ", student=" + usuario +
+                ", nameOfUser='" + userName + '\'' +
+                ", contactEmail='" + contactEmail + '\'' +
+                ", read=" + read +
                 '}';
     }
 }

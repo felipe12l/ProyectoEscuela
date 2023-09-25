@@ -1,19 +1,20 @@
 package co.edu.uptc.view;
 
+import co.edu.uptc.controller.SuggestionController;
 import co.edu.uptc.model.Suggestion;
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.CheckBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.control.Button;
 
 
 import java.io.File;
@@ -28,6 +29,9 @@ public class ManageSuggestion extends Header{
     TableColumn userColum;
     TableColumn userMailColum;
     TableColumn readStatus;
+    Button markAsReadButton;
+    SuggestionController mySugCo;
+    CheckBox checkBox;
     ObservableList<Suggestion> suggestions = FXCollections.observableArrayList();
     /**
      * Constructs a Header instance with a provided home button.
@@ -38,6 +42,7 @@ public class ManageSuggestion extends Header{
         borderPane = new BorderPane();
         table = new TableView();
         creationColumns();
+        mySugCo = new SuggestionController();
     }
 
     public Scene ListSuggestions(){
@@ -74,28 +79,41 @@ public class ManageSuggestion extends Header{
         contentColum.setCellValueFactory(new PropertyValueFactory<Suggestion, String>("Content"));
 
         userColum = new TableColumn<Suggestion, String>("Name User");
-        userColum.setCellValueFactory(new PropertyValueFactory<Suggestion, String>("NameofUser"));
+        userColum.setCellValueFactory(new PropertyValueFactory<Suggestion, String>("UserName"));
 
         userMailColum = new TableColumn<Suggestion, String>("Email");
-        userMailColum.setCellValueFactory(new PropertyValueFactory<Suggestion, String>("COntactEmail"));
+        userMailColum.setCellValueFactory(new PropertyValueFactory<Suggestion, String>("ContactEmail"));
 
-        readStatus = new TableColumn<>("Leído");
-        readStatus.setCellValueFactory((new PropertyValueFactory<>("leído")));
+        readStatus = new TableColumn<>("ReadStatus");
+        readStatus.setCellFactory(tc -> {
+            return new TableCell<Suggestion, Boolean>() {
+                @Override
+                protected void updateItem(Boolean item, boolean empty) {
+                    super.updateItem(item, empty);
 
-        readStatus.setCellValueFactory(tc -> {
-            CheckBoxTableCell<Suggestion, Boolean> checkBoxCell = new CheckBoxTableCell<>();
-            checkBoxCell.setAlignment(Pos.CENTER);
+                    if (!empty) {
+                        // Crea un nuevo botón.
+                        markAsReadButton = new Button("mark as read");
+                        this.setGraphic(markAsReadButton);
+                        markAsReadButton.setOnAction(event -> {
+                            int selectedIndex = table.getSelectionModel().getSelectedIndex();
+                            if (selectedIndex >= 0 && selectedIndex < table.getItems().size()) {
+                                Suggestion suggestion = (Suggestion) table.getItems().get(selectedIndex);
+                                mySugCo.markAsRead(suggestion);
+                                updateItem(item, empty);
+                                markAsReadButton.setText("");
+                                markAsReadButton.graphicProperty().setValue(new Label("readed"));
+                            }
+                            return;
+                        });
 
-            checkBoxCell.itemProperty().addListener((obs, oldValuem, newValue)->{
-                if (newValue != null){
-                    Suggestion suggestion = (Suggestion) table.getItems().get(checkBoxCell.getIndex());
-                    suggestion.setRead(newValue);
-
-                    view.suggestionController.markAsRead(suggestion);
+                    } else {
+                        this.setGraphic(null);
+                    }
                 }
-            });
-            return checkBoxCell;
+            };
         });
+
 
 
         table.getColumns().add(DateColum);
@@ -107,9 +125,6 @@ public class ManageSuggestion extends Header{
 
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY_ALL_COLUMNS);
     }
-
-
-
     public void addSugestion(Suggestion suggestion){
         suggestions.add(suggestion);
     }

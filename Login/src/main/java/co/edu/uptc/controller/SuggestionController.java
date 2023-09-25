@@ -78,6 +78,9 @@ public  class SuggestionController {
     }
 
     public boolean markAsRead(Suggestion sugerencia) {
+        if (sugerencia == null){
+            return false;
+        }
 
         if (!sugerencia.isRead()) {
             sugerencia.setRead(true);

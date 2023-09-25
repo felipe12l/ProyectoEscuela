@@ -24,5 +24,18 @@
       "name": "Convenios de Cooperación",
       "description": "La UPTC podría establecer acuerdos con entidades locales para promover proyectos de extensión y servicios a la comunidad, como programas de educación continua, asesoramiento técnico y social, entre otros."
     }
+  },
+  {
+    "Tittle": "dfhs",
+    "Contact": "dsfhdfh",
+    "NameofCreator": "sdfhsdf",
+    "Description": "dfhsdfh",
+    "Link": "sdfhsdfh",
+    "categoryName": "Convenios Empresariales",
+    "categoryDescription": "Acuerdos con empresas u organizaciones para promover la vinculación con el sector privado, incluyendo prácticas profesionales, proyectos conjuntos y colaboraciones en la formación de estudiantes.",
+    "category": {
+      "name": "Convenios Empresariales",
+      "description": "Acuerdos con empresas u organizaciones para promover la vinculación con el sector privado, incluyendo prácticas profesionales, proyectos conjuntos y colaboraciones en la formación de estudiantes."
+    }
   }
 ]
