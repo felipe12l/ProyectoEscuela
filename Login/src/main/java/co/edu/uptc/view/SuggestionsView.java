@@ -120,13 +120,18 @@ public class SuggestionsView extends Header{
 
             if (result.isPresent()) {
                 if (result.get() == opcion1) {
+                    reStartInputs();
                     sCont.createSuggestion("Title: "+titleSuggestionField.getText()+"content: "+contentSuggestionField.getText(),parent.controller.getLoggedPerson().getAccount());
                 } else if (result.get() == opcion2) {
                     alert.close();
                 }
 
             }
-
     }
+    public void reStartInputs(){
+        contentSuggestionField.clear();
+        titleSuggestionField.clear();
+    }
+
 
 }
