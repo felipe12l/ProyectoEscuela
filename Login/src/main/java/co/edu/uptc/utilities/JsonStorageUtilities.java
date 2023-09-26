@@ -3,6 +3,7 @@ package co.edu.uptc.utilities;
 import co.edu.uptc.model.Account;
 import co.edu.uptc.model.Covenant;
 import co.edu.uptc.model.Person;
+import co.edu.uptc.model.Suggestion;
 import co.edu.uptc.model.persontypes.Administrator;
 import co.edu.uptc.model.persontypes.Professor;
 import co.edu.uptc.model.persontypes.Secretary;
@@ -84,7 +85,6 @@ public class JsonStorageUtilities {
 
         File file = new File( FILEPATH + fileName + EXTENSION);
         if (!file.exists()) {
-            System.out.println("hola");
             return null;
         }
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file))) {

@@ -4,13 +4,20 @@
     "content": "Que enseñen japonés",
     "userName": "manuel.martinez",
     "contactEmail": "manuel.martinez@uptc.edu.co",
-    "read": false
+    "read": true
   },
   {
     "date": "Sat Sep 16 10:15:32 COT 2023",
     "content": "Agregar más libros a la biblioteca",
     "userName": "ana.rodriguez",
     "contactEmail": "ana.rodriguez@uptc.edu.co",
+    "read": true
+  },
+  {
+    "date": "Tue Sep 19 14:30:45 COT 2023",
+    "content": "Que enseñen japonés",
+    "userName": "manuel.martinez",
+    "contactEmail": "manuel.martinez@uptc.edu.co",
     "read": false
   },
   {

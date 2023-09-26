@@ -4,6 +4,8 @@ package co.edu.uptc.model;
 import co.edu.uptc.model.persontypes.User;
 import javafx.beans.property.SimpleBooleanProperty;
 
+import java.util.Objects;
+
 /**
  * The Suggestion class represents a suggestion made by a student. It contains information about the date,
  * the content of the suggestion, and the student who made the suggestion.
@@ -76,6 +78,19 @@ public class Suggestion {
 
     public void setRead(boolean read) {
         this.read = read;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Suggestion that = (Suggestion) o;
+        return Objects.equals(content, that.content) && Objects.equals(userName, that.userName) && Objects.equals(contactEmail, that.contactEmail);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(content, userName, contactEmail);
     }
 
     @Override

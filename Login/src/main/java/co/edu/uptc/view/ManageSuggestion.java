@@ -90,13 +90,13 @@ public class ManageSuggestion extends Header{
                             int selectedIndex = table.getSelectionModel().getSelectedIndex();
                             if (selectedIndex >= 0 && selectedIndex < table.getItems().size()) {
                                 Suggestion suggestion = (Suggestion) table.getItems().get(selectedIndex);
-                                mySugCo.markAsRead(suggestion);
-                                updateItem(item, empty);
-                                markAsReadButton.setText("");
-                                markAsReadButton.graphicProperty().setValue(new Label("readed"));
-                            }
+                               if(mySugCo.markAsRead(suggestion)){
+                                   updateItem(item, empty);
+                                    markAsReadButton.setText("");
+                                    markAsReadButton.graphicProperty().setValue(new Label("readed"));
+                                }
+                               }
                         });
-
                     } else {
                         this.setGraphic(null);
                     }
