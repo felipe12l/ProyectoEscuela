@@ -85,7 +85,6 @@ public class JsonStorageUtilities {
 
         File file = new File( FILEPATH + fileName + EXTENSION);
         if (!file.exists()) {
-            System.out.println("hola");
             return null;
         }
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file))) {
