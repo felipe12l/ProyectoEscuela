@@ -4,10 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6729a798-e111-487e-a219-100a2a7d6c45" name="Changes" comment="override hashcode and equals in covenants">
-      <change beforePath="$PROJECT_DIR$/Login/src/main/java/co/edu/uptc/controller/CovenantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/co/edu/uptc/controller/CovenantController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/java/co/edu/uptc/controller/SuggestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/co/edu/uptc/controller/SuggestionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/java/co/edu/uptc/persistence/Suggestions.json" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/co/edu/uptc/persistence/Suggestions.json" afterDir="false" />
+    <list default="true" id="6729a798-e111-487e-a219-100a2a7d6c45" name="Changes" comment="fixing suggesstions and covenants void">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/java/co/edu/uptc/persistence/Covenants.json" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/co/edu/uptc/persistence/Covenants.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/target/classes/co/edu/uptc/controller/CovenantController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/Login/target/classes/co/edu/uptc/controller/CovenantController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/target/classes/co/edu/uptc/controller/CovenantController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/Login/target/classes/co/edu/uptc/controller/CovenantController$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/target/classes/co/edu/uptc/controller/CovenantController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Login/target/classes/co/edu/uptc/controller/CovenantController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/target/classes/co/edu/uptc/controller/SuggestionController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/Login/target/classes/co/edu/uptc/controller/SuggestionController$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/target/classes/co/edu/uptc/controller/SuggestionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Login/target/classes/co/edu/uptc/controller/SuggestionController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/target/classes/co/edu/uptc/model/Suggestion.class" beforeDir="false" afterPath="$PROJECT_DIR$/Login/target/classes/co/edu/uptc/model/Suggestion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/target/classes/co/edu/uptc/utilities/JsonStorageUtilities$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Login/target/classes/co/edu/uptc/utilities/JsonStorageUtilities$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/target/classes/co/edu/uptc/utilities/JsonStorageUtilities$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/Login/target/classes/co/edu/uptc/utilities/JsonStorageUtilities$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/target/classes/co/edu/uptc/utilities/JsonStorageUtilities.class" beforeDir="false" afterPath="$PROJECT_DIR$/Login/target/classes/co/edu/uptc/utilities/JsonStorageUtilities.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Login/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Login/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,11 +93,20 @@
       <option name="project" value="LOCAL" />
       <updated>1695698781497</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fixing suggesstions and covenants void">
+      <option name="closed" value="true" />
+      <created>1695741666855</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1695741666855</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="override hashcode and equals in covenants" />
-    <option name="LAST_COMMIT_MESSAGE" value="override hashcode and equals in covenants" />
+    <MESSAGE value="fixing suggesstions and covenants void" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing suggesstions and covenants void" />
   </component>
 </project>

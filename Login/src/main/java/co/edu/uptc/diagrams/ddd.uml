@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>C:/Users/julia/OneDrive/Escritorio/ProyectoEscuela-master/Login</OriginalElement>
+  <nodes>
+    <node x="370.54559179431" y="860.7174672087269">co.edu.uptc.view.ListSuggestions</node>
+    <node x="2338.802110724347" y="505.1858067219281">co.edu.uptc.view.SuggestionsView</node>
+    <node x="2181.71715068691" y="1019.2361024728746">co.edu.uptc.model.Suggestion</node>
+    <node x="2130.0778622822927" y="1307.191969388875">co.edu.uptc.model.persontypes.User</node>
+    <node x="1506.7759616720589" y="267.6698068275224">co.edu.uptc.view.Header</node>
+    <node x="2447.9266245440485" y="1033.2133954008907">co.edu.uptc.view.LoginPanel</node>
+    <node x="240.3651702626156" y="1042.969316811819">co.edu.uptc.model.persontypes.Secretary</node>
+    <node x="1191.9099347279625" y="1059.7740876203688">co.edu.uptc.utilities.AccountUtilities</node>
+    <node x="740.681997145061" y="1407.1106238233144">co.edu.uptc.view.LoginDashBoard</node>
+    <node x="687.17954724742" y="503.36817691713964">co.edu.uptc.view.LoginListUsers</node>
+    <node x="1842.2092375180205" y="1269.3436037173938">co.edu.uptc.utilities.InputLibrary</node>
+    <node x="2054.352835513766" y="741.4332641577219">co.edu.uptc.controller.CovenantController</node>
+    <node x="2749.8648753989246" y="883.5720167925278">co.edu.uptc.test.LoginView</node>
+    <node x="1238.9263158761892" y="1030.3240093068769">co.edu.uptc.model.persontypes.Professor</node>
+    <node x="887.3768071709324" y="1022.1772154801251">co.edu.uptc.model.persontypes.Administrator</node>
+    <node x="1540.6243221135667" y="1151.5306530838407">co.edu.uptc.controller.SuggestionController</node>
+    <node x="-24.33804391103905" y="1288.625262378688">co.edu.uptc.view.LoginView</node>
+    <node x="940.7087278801164" y="1113.0892169022177">co.edu.uptc.model.Category</node>
+    <node x="292.43816714095306" y="1063.427015304777">co.edu.uptc.model.Covenant</node>
+    <node x="676.6392797164525" y="694.4286508429943">co.edu.uptc.model.Person</node>
+    <node x="1472.0660266312605" y="1559.8713771746238">co.edu.uptc.model.Answer</node>
+    <node x="2388.0993601439754" y="719.9117747549747">co.edu.uptc.controller.AccountController</node>
+    <node x="-123.2764043254802" y="906.0137557395299">co.edu.uptc.controller.PersonController</node>
+    <node x="1542.6408292924775" y="1278.644289489362">co.edu.uptc.controller.LoginController</node>
+    <node x="2733.7573777815655" y="533.0758974909573">co.edu.uptc.view.ListCovenants</node>
+    <node x="1881.201275118133" y="1517.769897496995">co.edu.uptc.controller.Roles</node>
+    <node x="1814.7795075954982" y="956.9300011539424">co.edu.uptc.utilities.JsonStorageUtilities</node>
+    <node x="1194.1925722818391" y="1219.3189095341907">co.edu.uptc.model.Account</node>
+    <node x="1805.535588524411" y="552.4187263759741">co.edu.uptc.view.SingInView</node>
+    <node x="1465.0953318068202" y="581.7729525150073">co.edu.uptc.view.ChangePasswordOptionConfig</node>
+    <node x="568.1079021348355" y="1050.2593383884039">co.edu.uptc.model.persontypes.Student</node>
+    <node x="1067.7509716306033" y="740.5956719669225">co.edu.uptc.view.ManageSuggestion</node>
+    <node x="1936.8228779728497" y="-14.807805466629588">co.edu.uptc.view.ManageCovenants</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="co.edu.uptc.view.ListCovenants" target="co.edu.uptc.model.Covenant" relationship="TO_MANY">
+      <point x="-125.00037778156548" y="1.0250904267650185E-4" />
+      <point x="2700.0" y="605.076" />
+      <point x="2700.0" y="1089.072" />
+      <point x="2751.365" y="1089.072" />
+      <point x="2751.365" y="1796.611" />
+      <point x="466.438" y="1796.611" />
+      <point x="-1.671409530672463E-4" y="126.99998469522302" />
+    </edge>
+    <edge source="co.edu.uptc.model.persontypes.Administrator" target="co.edu.uptc.model.Person" relationship="GENERALIZATION">
+      <point x="1.928290674868549E-4" y="-38.0" />
+      <point x="1032.877" y="1005.0" />
+      <point x="803.139" y="1005.0" />
+      <point x="-2.797164524963591E-4" y="94.0" />
+    </edge>
+    <edge source="co.edu.uptc.view.LoginView" target="co.edu.uptc.controller.LoginController" relationship="TO_ONE">
+      <point x="-150.99995608896094" y="-2.6237868792122754E-4" />
+      <point x="-125.838" y="1361.625" />
+      <point x="-125.838" y="1826.611" />
+      <point x="2112.578" y="1826.611" />
+      <point x="2112.578" y="1326.0" />
+      <point x="1903.209" y="1326.0" />
+      <point x="1903.209" y="1456.692" />
+      <point x="130.00017070752256" y="-5.9522894893621014" />
+    </edge>
+    <edge source="co.edu.uptc.view.LoginView" target="co.edu.uptc.view.ChangePasswordOptionConfig" relationship="TO_ONE">
+      <point x="-151.0" y="59.99973762131208" />
+      <point x="-140.838" y="1421.625" />
+      <point x="-140.838" y="1931.6109999999999" />
+      <point x="3051.757" y="1931.6109999999999" />
+      <point x="3051.757" y="-265.308" />
+      <point x="1493.7759616720589" y="-265.308" />
+      <point x="-131.31937013476136" y="-193.0" />
+    </edge>
+    <edge source="co.edu.uptc.view.ChangePasswordOptionConfig" target="co.edu.uptc.view.LoginView" relationship="TO_ONE">
+      <point x="159.9996681931798" y="4.7484992705904006E-5" />
+      <point x="1800.0" y="776.773" />
+      <point x="1800.0" y="212.0" />
+      <point x="197.724" y="212.0" />
+      <point x="129.56204391103904" y="-182.00026237868792" />
+    </edge>
+    <edge source="co.edu.uptc.model.Answer" target="co.edu.uptc.model.Person" relationship="TO_ONE">
+      <point x="-2.6631260425347136E-5" y="-50.000377174623736" />
+      <point x="1560.066" y="1575.0" />
+      <point x="1155.877" y="1575.0" />
+      <point x="1155.877" y="1144.0" />
+      <point x="844.608" y="1144.0" />
+      <point x="41.46872028354744" y="94.00034915700576" />
+    </edge>
+    <edge source="co.edu.uptc.view.SingInView" target="co.edu.uptc.utilities.InputLibrary" relationship="TO_ONE">
+      <point x="4.114755890896049E-4" y="226.00027362402602" />
+      <point x="1954.036" y="962.2729999999999" />
+      <point x="2149.217" y="962.2729999999999" />
+      <point x="2149.217" y="1033.0" />
+      <point x="2429.427" y="1033.0" />
+      <point x="2429.427" y="1492.27" />
+      <point x="2049.701" y="1492.27" />
+      <point x="57.49176248197955" y="39.00039628260629" />
+    </edge>
+    <edge source="co.edu.uptc.controller.SuggestionController" target="co.edu.uptc.model.Suggestion" relationship="TO_MANY">
+      <point x="-3.2211356665357016E-4" y="-82.99965308384071" />
+      <point x="1680.124" y="1051.0" />
+      <point x="1826.5" y="1051.0" />
+      <point x="1826.5" y="976.5" />
+      <point x="2291.717" y="976.5" />
+      <point x="-1.5068690981934196E-4" y="-94.00010247287446" />
+    </edge>
+    <edge source="co.edu.uptc.view.ListSuggestions" target="co.edu.uptc.view.LoginView" relationship="TO_ONE">
+      <point x="4.082056900074349E-4" y="-72.00046720872695" />
+      <point x="490.546" y="212.0" />
+      <point x="197.724" y="212.0" />
+      <point x="129.56204391103904" y="-182.00026237868792" />
+    </edge>
+    <edge source="co.edu.uptc.controller.SuggestionController" target="co.edu.uptc.model.persontypes.User" relationship="TO_ONE">
+      <point x="114.0" y="-10.499653083840712" />
+      <point x="1851.2795075954982" y="1226.031" />
+      <point x="1851.2795075954982" y="1437.3436037173938" />
+      <point x="-77.0" y="34.15163432851887" />
+    </edge>
+    <edge source="co.edu.uptc.view.ChangePasswordOptionConfig" target="co.edu.uptc.view.Header" relationship="GENERALIZATION">
+      <point x="-3.3180682021338725E-4" y="-192.9999525150073" />
+      <point x="1625.095" y="554.0" />
+      <point x="1609.776" y="554.0" />
+      <point x="3.832794118352467E-5" y="116.0" />
+    </edge>
+    <edge source="co.edu.uptc.view.LoginView" target="co.edu.uptc.controller.CovenantController" relationship="TO_ONE">
+      <point x="-151.0" y="44.99973762131208" />
+      <point x="-275.83799999999997" y="1406.625" />
+      <point x="-275.83799999999997" y="-250.308" />
+      <point x="2243.352835513766" y="-250.308" />
+      <point x="-0.0" y="-83.0" />
+    </edge>
+    <edge source="co.edu.uptc.model.persontypes.Student" target="co.edu.uptc.model.Person" relationship="GENERALIZATION">
+      <point x="9.786516443455184E-5" y="-38.0" />
+      <point x="697.608" y="1005.0" />
+      <point x="803.139" y="1005.0" />
+      <point x="-2.797164524963591E-4" y="94.0" />
+    </edge>
+    <edge source="co.edu.uptc.controller.CovenantController" target="co.edu.uptc.utilities.JsonStorageUtilities" relationship="TO_ONE">
+      <point x="-79.13583551376587" y="82.99973584227814" />
+      <point x="2164.217" y="1311.43" />
+      <point x="1815.0" y="1311.43" />
+      <point x="1815.0" y="1183.0" />
+      <point x="-133.49950759549824" y="42.069998846057615" />
+    </edge>
+    <edge source="co.edu.uptc.controller.LoginController" target="co.edu.uptc.controller.AccountController" relationship="TO_ONE">
+      <point x="15.000170707522557" y="83.0" />
+      <point x="1698.141" y="1871.611" />
+      <point x="3021.757" y="1871.611" />
+      <point x="3021.757" y="903.9117747549747" />
+      <point x="131.0" y="-0.0" />
+    </edge>
+    <edge source="co.edu.uptc.view.ManageSuggestion" target="co.edu.uptc.view.Header" relationship="GENERALIZATION">
+      <point x="2.836939665940008E-5" y="-148.9996719669224" />
+      <point x="1198.251" y="554.0" />
+      <point x="1609.776" y="554.0" />
+      <point x="3.832794118352467E-5" y="116.0" />
+    </edge>
+    <edge source="co.edu.uptc.controller.CovenantController" target="co.edu.uptc.model.Category" relationship="TO_MANY">
+      <point x="110.0001644862341" y="-71.02126415772182" />
+      <point x="3006.757" y="788.412" />
+      <point x="3006.757" y="1856.611" />
+      <point x="734.682" y="1856.611" />
+      <point x="734.682" y="1311.0" />
+      <point x="1030.2089999999998" y="1311.0" />
+      <point x="2.7211988356157235E-4" y="60.999783097782256" />
+    </edge>
+    <edge source="co.edu.uptc.model.persontypes.Secretary" target="co.edu.uptc.model.Person" relationship="GENERALIZATION">
+      <point x="-1.70262615597494E-4" y="-38.0" />
+      <point x="373.865" y="1005.0" />
+      <point x="803.139" y="1005.0" />
+      <point x="-2.797164524963591E-4" y="94.0" />
+    </edge>
+    <edge source="co.edu.uptc.view.ManageSuggestion" target="co.edu.uptc.controller.SuggestionController" relationship="TO_ONE">
+      <point x="-29.99997163060334" y="-148.9996719669225" />
+      <point x="1168.251" y="426.0" />
+      <point x="-110.838" y="426.0" />
+      <point x="-110.838" y="1807.111" />
+      <point x="1826.141" y="1807.111" />
+      <point x="1826.141" y="1366.644" />
+      <point x="1672.641" y="1366.644" />
+      <point x="-7.483322113566601" y="83.00034691615929" />
+    </edge>
+    <edge source="co.edu.uptc.controller.AccountController" target="co.edu.uptc.model.Account" relationship="TO_MANY">
+      <point x="113.32763985602469" y="83.00022524502538" />
+      <point x="2658.427" y="1781.611" />
+      <point x="1170.877" y="1781.611" />
+      <point x="1170.877" y="1273.589" />
+      <point x="1529.0" y="1273.589" />
+      <point x="1529.0" y="1403.319" />
+      <point x="143.50042771816084" y="9.046580930771597E-5" />
+    </edge>
+    <edge source="co.edu.uptc.view.ListSuggestions" target="co.edu.uptc.view.Header" relationship="GENERALIZATION">
+      <point x="121.0" y="-4.672087268318137E-4" />
+      <point x="659.139" y="910.7170000000001" />
+      <point x="659.139" y="987.0" />
+      <point x="1816.0" y="987.0" />
+      <point x="1816.0" y="554.0" />
+      <point x="1609.776" y="554.0" />
+      <point x="3.832794118352467E-5" y="116.0" />
+    </edge>
+    <edge source="co.edu.uptc.controller.SuggestionController" target="co.edu.uptc.utilities.JsonStorageUtilities" relationship="TO_ONE">
+      <point x="113.99967788643335" y="3.469161592875025E-4" />
+      <point x="1815.0" y="1236.531" />
+      <point x="1815.0" y="1183.0" />
+      <point x="-133.49950759549824" y="42.069998846057615" />
+    </edge>
+    <edge source="co.edu.uptc.controller.LoginController" target="co.edu.uptc.model.Account" relationship="TO_ONE">
+      <point x="-129.99982929247744" y="-2.894893621032679E-4" />
+      <point x="1529.0" y="1462.644" />
+      <point x="1529.0" y="1403.319" />
+      <point x="143.50042771816084" y="9.046580930771597E-5" />
+    </edge>
+    <edge source="co.edu.uptc.view.SuggestionsView" target="co.edu.uptc.controller.SuggestionController" relationship="CREATE">
+      <point x="-124.000110724347" y="1.9327807194713387E-4" />
+      <point x="2140.853" y="577.186" />
+      <point x="2140.853" y="447.0" />
+      <point x="2210.323" y="447.0" />
+      <point x="2210.323" y="-205.308" />
+      <point x="2991.757" y="-205.308" />
+      <point x="2991.757" y="1841.611" />
+      <point x="1140.877" y="1841.611" />
+      <point x="1140.877" y="1242.274" />
+      <point x="-114.00032211356665" y="5.743346916159226" />
+    </edge>
+    <edge source="co.edu.uptc.utilities.JsonStorageUtilities" target="co.edu.uptc.model.Account" relationship="TO_MANY">
+      <point x="-133.49950759549824" y="-26.930001153942385" />
+      <point x="1529.0" y="1114.0" />
+      <point x="1529.0" y="1403.319" />
+      <point x="143.50042771816084" y="9.046580930771597E-5" />
+    </edge>
+    <edge source="co.edu.uptc.view.LoginView" target="co.edu.uptc.view.LoginDashBoard" relationship="TO_ONE">
+      <point x="-0.0" y="182.0" />
+      <point x="68.16195608896095" y="1561.125262378688" />
+      <point x="-108.0" y="16.014638555373494" />
+    </edge>
+    <edge source="co.edu.uptc.controller.LoginController" target="co.edu.uptc.controller.PersonController" relationship="TO_ONE">
+      <point x="30.000170707522557" y="83.0" />
+      <point x="1713.141" y="1916.6109999999999" />
+      <point x="-200.838" y="1916.6109999999999" />
+      <point x="-200.838" y="1019.0139999999999" />
+      <point x="-130.0" y="-14.999755739529974" />
+    </edge>
+    <edge source="co.edu.uptc.view.LoginDashBoard" target="co.edu.uptc.view.LoginView" relationship="TO_ONE">
+      <point x="2.8549389980980777E-6" y="-203.99962382331432" />
+      <point x="860.182" y="1129.0" />
+      <point x="1800.0" y="1129.0" />
+      <point x="1800.0" y="212.0" />
+      <point x="197.724" y="212.0" />
+      <point x="129.56204391103904" y="-182.00026237868792" />
+    </edge>
+    <edge source="co.edu.uptc.utilities.JsonStorageUtilities" target="co.edu.uptc.model.Person" relationship="TO_MANY">
+      <point x="-133.49950759549824" y="-42.106001153942316" />
+      <point x="1544.0" y="1098.824" />
+      <point x="1544.0" y="1144.0" />
+      <point x="844.608" y="1144.0" />
+      <point x="41.46872028354744" y="94.00034915700576" />
+    </edge>
+    <edge source="co.edu.uptc.model.Covenant" target="co.edu.uptc.model.Category" relationship="TO_ONE">
+      <point x="173.99983285904693" y="35.18398469522322" />
+      <point x="734.682" y="1348.611" />
+      <point x="734.682" y="1311.0" />
+      <point x="1030.2089999999998" y="1311.0" />
+      <point x="2.7211988356157235E-4" y="60.999783097782256" />
+    </edge>
+    <edge source="co.edu.uptc.test.LoginView" target="co.edu.uptc.utilities.InputLibrary" relationship="TO_ONE">
+      <point x="-107.49987539892481" y="52.92798320747215" />
+      <point x="2715.0" y="1052.5" />
+      <point x="2715.0" y="1033.0" />
+      <point x="2429.427" y="1033.0" />
+      <point x="2429.427" y="1492.27" />
+      <point x="2049.701" y="1492.27" />
+      <point x="57.49176248197955" y="39.00039628260629" />
+    </edge>
+    <edge source="co.edu.uptc.controller.AccountController" target="co.edu.uptc.utilities.AccountUtilities" relationship="TO_ONE">
+      <point x="131.0" y="-15.0" />
+      <point x="3036.757" y="888.9117747549747" />
+      <point x="3036.757" y="1886.611" />
+      <point x="1456.0660266312605" y="1886.611" />
+      <point x="1456.0660266312605" y="1523.144289489362" />
+      <point x="1498.4263158761892" y="1523.144289489362" />
+      <point x="1498.4263158761892" y="1197.7740876203688" />
+      <point x="75.0" y="-0.0" />
+    </edge>
+    <edge source="co.edu.uptc.view.ManageCovenants" target="co.edu.uptc.view.Header" relationship="GENERALIZATION">
+      <point x="-127.99987797284984" y="-1.9453337040431506E-4" />
+      <point x="1816.0" y="134.192" />
+      <point x="1816.0" y="554.0" />
+      <point x="1609.776" y="554.0" />
+      <point x="3.832794118352467E-5" y="116.0" />
+    </edge>
+    <edge source="co.edu.uptc.view.LoginView" target="co.edu.uptc.controller.SuggestionController" relationship="TO_ONE">
+      <point x="144.56204391103904" y="-182.00026237868792" />
+      <point x="212.724" y="426.0" />
+      <point x="-110.838" y="426.0" />
+      <point x="-110.838" y="1807.111" />
+      <point x="1826.141" y="1807.111" />
+      <point x="1826.141" y="1366.644" />
+      <point x="1672.641" y="1366.644" />
+      <point x="-7.483322113566601" y="83.00034691615929" />
+    </edge>
+    <edge source="co.edu.uptc.view.SuggestionsView" target="co.edu.uptc.controller.SuggestionController" relationship="TO_ONE">
+      <point x="-1.1072434699599398E-4" y="-137.99980672192805" />
+      <point x="2462.802" y="-190.308" />
+      <point x="182.724" y="-190.308" />
+      <point x="182.724" y="426.0" />
+      <point x="-110.838" y="426.0" />
+      <point x="-110.838" y="1807.111" />
+      <point x="1826.141" y="1807.111" />
+      <point x="1826.141" y="1366.644" />
+      <point x="1672.641" y="1366.644" />
+      <point x="-7.483322113566601" y="83.00034691615929" />
+    </edge>
+    <edge source="co.edu.uptc.view.LoginListUsers" target="co.edu.uptc.model.Account" relationship="TO_MANY">
+      <point x="125.50045275257992" y="-70.19817691713968" />
+      <point x="1417.595" y="516.17" />
+      <point x="1417.595" y="1005.0" />
+      <point x="1529.0" y="1005.0" />
+      <point x="1529.0" y="1403.319" />
+      <point x="143.50042771816084" y="9.046580930771597E-5" />
+    </edge>
+    <edge source="co.edu.uptc.controller.CovenantController" target="co.edu.uptc.model.Covenant" relationship="TO_MANY">
+      <point x="110.0001644862341" y="-56.021264157721816" />
+      <point x="2700.0" y="803.412" />
+      <point x="2700.0" y="1089.072" />
+      <point x="2751.365" y="1089.072" />
+      <point x="2751.365" y="1796.611" />
+      <point x="466.438" y="1796.611" />
+      <point x="-1.671409530672463E-4" y="126.99998469522302" />
+    </edge>
+    <edge source="co.edu.uptc.view.SuggestionsView" target="co.edu.uptc.view.Header" relationship="GENERALIZATION">
+      <point x="-71.30211072434713" y="138.0" />
+      <point x="2391.5" y="987.0" />
+      <point x="1816.0" y="987.0" />
+      <point x="1816.0" y="554.0" />
+      <point x="1609.776" y="554.0" />
+      <point x="3.832794118352467E-5" y="116.0" />
+    </edge>
+    <edge source="co.edu.uptc.view.LoginListUsers" target="co.edu.uptc.view.Header" relationship="GENERALIZATION">
+      <point x="125.5" y="4.904823082860389" />
+      <point x="1183.251" y="591.273" />
+      <point x="1183.251" y="554.0" />
+      <point x="1609.776" y="554.0" />
+      <point x="3.832794118352467E-5" y="116.0" />
+    </edge>
+    <edge source="co.edu.uptc.view.ManageCovenants" target="co.edu.uptc.model.Covenant" relationship="TO_MANY">
+      <point x="128.00012202715016" y="-1.9453337040431506E-4" />
+      <point x="2700.0" y="134.192" />
+      <point x="2700.0" y="1089.072" />
+      <point x="2751.365" y="1089.072" />
+      <point x="2751.365" y="1796.611" />
+      <point x="466.438" y="1796.611" />
+      <point x="-1.671409530672463E-4" y="126.99998469522302" />
+    </edge>
+    <edge source="co.edu.uptc.controller.PersonController" target="co.edu.uptc.utilities.JsonStorageUtilities" relationship="TO_ONE">
+      <point x="-129.9995956745198" y="2.442604700263473E-4" />
+      <point x="-100.338" y="1034.014" />
+      <point x="-100.338" y="1766.611" />
+      <point x="1861.78" y="1766.611" />
+      <point x="1861.78" y="1353.844" />
+      <point x="1815.0" y="1353.844" />
+      <point x="1815.0" y="1183.0" />
+      <point x="-133.49950759549824" y="42.069998846057615" />
+    </edge>
+    <edge source="co.edu.uptc.controller.LoginController" target="co.edu.uptc.utilities.JsonStorageUtilities" relationship="TO_ONE">
+      <point x="1.707075225567678E-4" y="-83.0002894893621" />
+      <point x="1683.141" y="1337.031" />
+      <point x="1815.0" y="1337.031" />
+      <point x="1815.0" y="1183.0" />
+      <point x="-133.49950759549824" y="42.069998846057615" />
+    </edge>
+    <edge source="co.edu.uptc.controller.AccountController" target="co.edu.uptc.utilities.JsonStorageUtilities" relationship="TO_ONE">
+      <point x="-100.67236014397531" y="83.00022524502538" />
+      <point x="2444.427" y="1311.43" />
+      <point x="1815.0" y="1311.43" />
+      <point x="1815.0" y="1183.0" />
+      <point x="-133.49950759549824" y="42.069998846057615" />
+    </edge>
+    <edge source="co.edu.uptc.view.ManageSuggestion" target="co.edu.uptc.view.LoginView" relationship="TO_ONE">
+      <point x="2.836939665940008E-5" y="149.0003280330775" />
+      <point x="1198.251" y="1129.0" />
+      <point x="1800.0" y="1129.0" />
+      <point x="1800.0" y="212.0" />
+      <point x="197.724" y="212.0" />
+      <point x="129.56204391103904" y="-182.00026237868792" />
+    </edge>
+    <edge source="co.edu.uptc.view.ManageSuggestion" target="co.edu.uptc.controller.SuggestionController" relationship="CREATE">
+      <point x="15.00002836939666" y="-148.9996719669225" />
+      <point x="1213.251" y="274.17" />
+      <point x="1785.0" y="274.17" />
+      <point x="1785.0" y="447.0" />
+      <point x="2210.323" y="447.0" />
+      <point x="2210.323" y="-205.308" />
+      <point x="2991.757" y="-205.308" />
+      <point x="2991.757" y="1841.611" />
+      <point x="1140.877" y="1841.611" />
+      <point x="1140.877" y="1242.274" />
+      <point x="-114.00032211356665" y="5.743346916159226" />
+    </edge>
+    <edge source="co.edu.uptc.view.LoginView" target="co.edu.uptc.view.ManageSuggestion" relationship="TO_ONE">
+      <point x="10.5" y="-182.0" />
+      <point x="78.66195608896095" y="1103.969316811819" />
+      <point x="226.16195608896095" y="1103.969316811819" />
+      <point x="226.16195608896095" y="760.4286508429943" />
+      <point x="-135.0" y="-52.16702112392818" />
+    </edge>
+    <edge source="co.edu.uptc.view.ManageSuggestion" target="co.edu.uptc.model.Suggestion" relationship="TO_MANY">
+      <point x="135.00002836939666" y="3.280330774941831E-4" />
+      <point x="1395.095" y="812.596" />
+      <point x="1395.095" y="1017.3240000000001" />
+      <point x="1521.0" y="1017.3240000000001" />
+      <point x="1521.0" y="1051.0" />
+      <point x="1826.5" y="1051.0" />
+      <point x="1826.5" y="976.5" />
+      <point x="2291.717" y="976.5" />
+      <point x="-1.5068690981934196E-4" y="-94.00010247287446" />
+    </edge>
+    <edge source="co.edu.uptc.controller.PersonController" target="co.edu.uptc.model.Person" relationship="TO_MANY">
+      <point x="4.043254802006402E-4" y="50.000244260470026" />
+      <point x="50.224000000000004" y="1144.0" />
+      <point x="844.608" y="1144.0" />
+      <point x="41.46872028354744" y="94.00034915700576" />
+    </edge>
+    <edge source="co.edu.uptc.view.LoginView" target="co.edu.uptc.view.SuggestionsView" relationship="TO_ONE">
+      <point x="-151.0" y="29.99973762131208" />
+      <point x="-260.83799999999997" y="1391.625" />
+      <point x="-260.83799999999997" y="-235.308" />
+      <point x="2447.802" y="-235.308" />
+      <point x="-15.000110724346996" y="-138.0" />
+    </edge>
+    <edge source="co.edu.uptc.view.SuggestionsView" target="co.edu.uptc.view.LoginView" relationship="TO_ONE">
+      <point x="-124.000110724347" y="-108.2668067219281" />
+      <point x="1800.0" y="468.919" />
+      <point x="1800.0" y="212.0" />
+      <point x="197.724" y="212.0" />
+      <point x="129.56204391103904" y="-182.00026237868792" />
+    </edge>
+    <edge source="co.edu.uptc.controller.LoginController" target="co.edu.uptc.model.Person" relationship="TO_ONE">
+      <point x="1.707075225567678E-4" y="82.9997105106379" />
+      <point x="1683.141" y="1575.0" />
+      <point x="1155.877" y="1575.0" />
+      <point x="1155.877" y="1144.0" />
+      <point x="844.608" y="1144.0" />
+      <point x="41.46872028354744" y="94.00034915700576" />
+    </edge>
+    <edge source="co.edu.uptc.model.persontypes.Professor" target="co.edu.uptc.model.Person" relationship="GENERALIZATION">
+      <point x="-3.15876189233677E-4" y="-38.0" />
+      <point x="1372.426" y="1005.0" />
+      <point x="803.139" y="1005.0" />
+      <point x="-2.797164524963591E-4" y="94.0" />
+    </edge>
+    <edge source="co.edu.uptc.view.LoginListUsers" target="co.edu.uptc.view.LoginView" relationship="TO_ONE">
+      <point x="4.5275257991761464E-4" y="-127.00017691713958" />
+      <point x="804.18" y="212.0" />
+      <point x="197.724" y="212.0" />
+      <point x="129.56204391103904" y="-182.00026237868792" />
+    </edge>
+    <edge source="co.edu.uptc.view.LoginView" target="co.edu.uptc.view.LoginListUsers" relationship="TO_ONE">
+      <point x="-151.0" y="14.999737621312079" />
+      <point x="-215.83799999999997" y="1376.625" />
+      <point x="-215.83799999999997" y="586.3681769171396" />
+      <point x="-125.5" y="-0.0" />
+    </edge>
+    <edge source="co.edu.uptc.view.LoginView" target="co.edu.uptc.view.ManageCovenants" relationship="TO_ONE">
+      <point x="-151.0" y="-60.00026237868792" />
+      <point x="-155.838" y="1301.625" />
+      <point x="-155.838" y="119.19200000000001" />
+      <point x="-128.0" y="-15.000194533370404" />
+    </edge>
+    <edge source="co.edu.uptc.view.ManageCovenants" target="co.edu.uptc.view.LoginView" relationship="TO_ONE">
+      <point x="-127.99987797284962" y="14.999805466629596" />
+      <point x="1800.0" y="149.192" />
+      <point x="1800.0" y="212.0" />
+      <point x="197.724" y="212.0" />
+      <point x="129.56204391103904" y="-182.00026237868792" />
+    </edge>
+    <edge source="co.edu.uptc.test.LoginView" target="co.edu.uptc.controller.LoginController" relationship="TO_ONE">
+      <point x="1.2460107518563746E-4" y="71.99998320747204" />
+      <point x="2851.365" y="1811.611" />
+      <point x="2301.578" y="1811.611" />
+      <point x="2301.578" y="1326.0" />
+      <point x="1903.209" y="1326.0" />
+      <point x="1903.209" y="1456.692" />
+      <point x="130.00017070752256" y="-5.9522894893621014" />
+    </edge>
+    <edge source="co.edu.uptc.model.Person" target="co.edu.uptc.model.Account" relationship="TO_ONE">
+      <point x="126.4997202835475" y="3.491570056439741E-4" />
+      <point x="987.877" y="867.429" />
+      <point x="987.877" y="646.096" />
+      <point x="1417.595" y="646.096" />
+      <point x="1417.595" y="1005.0" />
+      <point x="1529.0" y="1005.0" />
+      <point x="1529.0" y="1403.319" />
+      <point x="143.50042771816084" y="9.046580930771597E-5" />
+    </edge>
+    <edge source="co.edu.uptc.view.ListCovenants" target="co.edu.uptc.view.LoginView" relationship="TO_ONE">
+      <point x="-3.7778156547574326E-4" y="-148.99989749095732" />
+      <point x="2849.257" y="-175.308" />
+      <point x="1800.0" y="-175.308" />
+      <point x="1800.0" y="212.0" />
+      <point x="197.724" y="212.0" />
+      <point x="129.56204391103904" y="-182.00026237868792" />
+    </edge>
+    <edge source="co.edu.uptc.view.LoginView" target="co.edu.uptc.view.ListCovenants" relationship="TO_ONE">
+      <point x="-151.0" y="-30.00026237868792" />
+      <point x="-245.83799999999997" y="1331.625" />
+      <point x="-245.83799999999997" y="-220.308" />
+      <point x="2864.257" y="-220.308" />
+      <point x="14.999622218434524" y="-149.0" />
+    </edge>
+    <edge source="co.edu.uptc.view.SingInView" target="co.edu.uptc.view.Header" relationship="GENERALIZATION">
+      <point x="-108.49958852441091" y="2.73624025794561E-4" />
+      <point x="1816.0" y="712.419" />
+      <point x="1816.0" y="554.0" />
+      <point x="1609.776" y="554.0" />
+      <point x="3.832794118352467E-5" y="116.0" />
+    </edge>
+    <edge source="co.edu.uptc.view.LoginView" target="co.edu.uptc.view.SingInView" relationship="TO_ONE">
+      <point x="-151.0" y="-45.00026237868792" />
+      <point x="-230.83799999999997" y="1316.625" />
+      <point x="-230.83799999999997" y="197.0" />
+      <point x="1919.3228779728497" y="197.0" />
+      <point x="-34.71271055156126" y="-226.0" />
+    </edge>
+    <edge source="co.edu.uptc.view.LoginView" target="co.edu.uptc.view.LoginPanel" relationship="TO_ONE">
+      <point x="-151.0" y="-15.000262378687921" />
+      <point x="-230.83799999999997" y="1346.625" />
+      <point x="-230.83799999999997" y="1946.6109999999999" />
+      <point x="2551.4266245440485" y="1946.6109999999999" />
+      <point x="-0.0" y="160.0" />
+    </edge>
+    <edge source="co.edu.uptc.view.LoginPanel" target="co.edu.uptc.view.LoginView" relationship="TO_ONE">
+      <point x="-89.4996245440484" y="57.21660459910936" />
+      <point x="1830.641" y="1296.43" />
+      <point x="1830.641" y="1129.0" />
+      <point x="1800.0" y="1129.0" />
+      <point x="1800.0" y="212.0" />
+      <point x="197.724" y="212.0" />
+      <point x="129.56204391103904" y="-182.00026237868792" />
+    </edge>
+    <edge source="co.edu.uptc.view.SingInView" target="co.edu.uptc.view.LoginView" relationship="TO_ONE">
+      <point x="-108.49958852441091" y="-14.999726375974092" />
+      <point x="1800.0" y="697.419" />
+      <point x="1800.0" y="212.0" />
+      <point x="197.724" y="212.0" />
+      <point x="129.56204391103904" y="-182.00026237868792" />
+    </edge>
+    <edge source="co.edu.uptc.view.ListCovenants" target="co.edu.uptc.view.Header" relationship="GENERALIZATION">
+      <point x="-125.0" y="127.61010250904269" />
+      <point x="2391.5" y="732.686" />
+      <point x="2391.5" y="987.0" />
+      <point x="1816.0" y="987.0" />
+      <point x="1816.0" y="554.0" />
+      <point x="1609.776" y="554.0" />
+      <point x="3.832794118352467E-5" y="116.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="true" x="1388.0" y="846.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
