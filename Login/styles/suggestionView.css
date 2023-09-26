@@ -1,0 +1,16 @@
+#root {
+    -fx-background-color: #fcf3d9;
+}
+#fields{
+
+    -fx-background-color: #FDFEFE;
+    -fx-max-width: 300px;
+    -fx-padding: 15;
+    -fx-background-radius: 10 10 10 10;
+}
+#contentField{
+    -fx-min-height: 200px;
+}
+#general .button {
+    -fx-text-fill: white;
+}

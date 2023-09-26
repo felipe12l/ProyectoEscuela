@@ -14,7 +14,7 @@ import javafx.stage.Stage;
  * This class represents the main application view for the login functionality.
  * It manages the login panel, dashboard, sign-in view, and other related views.
  */
-public class LoginView  extends Application implements EventHandler<ActionEvent> {
+public class LoginView extends Application implements EventHandler<ActionEvent> {
 
     LoginPanel loginPanel;
     LoginDashBoard loginDashBoard;
@@ -27,12 +27,14 @@ public class LoginView  extends Application implements EventHandler<ActionEvent>
     SuggestionController suggestionController;
     ManageSuggestion manageSuggestion;
     ListCovenants listCovenants;
+    SuggestionsView suggestionsView;
     ChangePasswordOptionConfig changePassword;
     Button home;
     /**
      * Constructs a new LoginView instance and initializes its components.
      */
-    public LoginView (){
+    public LoginView(){
+
         this.controller = new LoginController();
         this.covenantController = new CovenantController();
         this.suggestionController = new SuggestionController();
@@ -46,6 +48,7 @@ public class LoginView  extends Application implements EventHandler<ActionEvent>
         this.manageCovenants = new ManageCovenants(this, this.home);
         this.listCovenants = new ListCovenants(this,this.home);
         this.manageSuggestion = new ManageSuggestion(this, this.home);
+        this.suggestionsView=new SuggestionsView(this,this.home);
     }
     /**
      * The entry point for the JavaFX application.
@@ -153,6 +156,10 @@ public class LoginView  extends Application implements EventHandler<ActionEvent>
         if(e.getSource() == this.home){
             this.stage.setScene(loginDashBoard.dashBoard());
         }
+        if(e.getSource()==this.loginDashBoard.btnOption8){
+            this.stage.setTitle("Haciendo Sugerencias");
 
+            this.stage.setScene(suggestionsView.View());
+        }
     }
 }

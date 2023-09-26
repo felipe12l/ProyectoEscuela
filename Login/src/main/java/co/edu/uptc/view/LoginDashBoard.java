@@ -3,7 +3,6 @@ package co.edu.uptc.view;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Cursor;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -34,7 +33,7 @@ public class LoginDashBoard {
     Button btnOption5;
     Button btnOption6;
     Button btnOption7;
-
+    Button btnOption8;
 
     /**
      * Constructs a LoginDashboard instance.
@@ -83,7 +82,7 @@ public class LoginDashBoard {
             containerButtoms = new VBox(btnOption1, btnOption2, btnOption5,btnOption7, btnOption4);
         }else{
             settingButtomsGenerals();
-            containerButtoms = new VBox(btnOption3, btnOption6,btnOption4);
+            containerButtoms = new VBox(btnOption3, btnOption6,btnOption8,btnOption4);
         }
 
         this.containerButtoms.setAlignment(Pos.CENTER);
@@ -94,19 +93,26 @@ public class LoginDashBoard {
      * of the user's role. Margins are set.
      */
     private void settingButtomsGenerals(){
+        //
         this.btnOption3 = new Button("Change password");
         this.btnOption6 = new Button("See covenants");
+        this.btnOption8=new Button("Make a Suggestion!!!");
         this.btnOption4 = new Button("Logout");
-
+        //
         this.btnOption3.setFont(new Font(18));
         this.btnOption6.setFont(new Font(18));
         this.btnOption4.setFont(new Font(18));
+        this.btnOption8.setFont(new Font(18));
+        //
         VBox.setMargin(btnOption3, new Insets(15));
         VBox.setMargin(btnOption6, new Insets(15));
         VBox.setMargin(btnOption4, new Insets(15));
+        VBox.setMargin(btnOption8, new Insets(15));
+        //
         this.btnOption3.setOnAction(this.parent);
         this.btnOption6.setOnAction(this.parent);
         this.btnOption4.setOnAction(this.parent);
+        this.btnOption8.setOnAction(this.parent);
     }
 
     /**
