@@ -73,6 +73,9 @@ public class CovenantController {
     }
     public boolean addCovenant(String tittle, String contact, String nameofCreator, String description, String link,int position){
 
+        if((tittle.equals("")) || (contact.equals("") || nameofCreator.equals("") || (description.equals("") || link.equals("")))){
+            return false;
+        }
         Covenant c =new Covenant(tittle, contact, nameofCreator,description,link,categories.get(position));
         for (Covenant covenant: covenantsList){
             if (covenant.getTittle().equals(tittle) && covenant.getContact().equals(contact) && covenant.getNameofCreator().equals(nameofCreator) &&

@@ -67,6 +67,9 @@ public  class SuggestionController {
      * @return true if the suggestion was successfully created and added, false otherwise.
      */
     public boolean createSuggestion(String message, Account account) {
+        if(message.equals("Title: content: ")){
+            return false;
+        }
         Date date = new Date();
         String userName = account.getUserName();
         String userMail = account.getEmail();
