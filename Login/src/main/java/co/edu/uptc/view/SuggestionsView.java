@@ -89,7 +89,7 @@ public class SuggestionsView extends Header{
         //contentField,label
         contentSuggestionField=new TextArea();
         contentSuggestionField.setWrapText(true);
-        contentSuggestionLabel=new Label("Descripcion, no mas de 200");
+        contentSuggestionLabel=new Label("Descripcion");
         contentSuggestionField.setId("contentField");
         contentSuggestionField.setMaxWidth(200);
         //button
