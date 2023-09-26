@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6729a798-e111-487e-a219-100a2a7d6c45" name="Changes" comment="">
+    <list default="true" id="6729a798-e111-487e-a219-100a2a7d6c45" name="Changes" comment="override hashcode and equals in covenants">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/java/co/edu/uptc/controller/CovenantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/co/edu/uptc/controller/CovenantController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Login/src/main/java/co/edu/uptc/persistence/Covenants.json" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/co/edu/uptc/persistence/Covenants.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/java/co/edu/uptc/persistence/accounts.json" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/co/edu/uptc/persistence/accounts.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/java/co/edu/uptc/persistence/people.json" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/co/edu/uptc/persistence/people.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/src/main/java/co/edu/uptc/view/ListCovenants.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/co/edu/uptc/view/ListCovenants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Login/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Login/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Login/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/src/main/java/co/edu/uptc/view/ManageCovenants.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login/src/main/java/co/edu/uptc/view/ManageCovenants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login/styles/ManageCovenants.css" beforeDir="false" afterPath="$PROJECT_DIR$/Login/styles/ManageCovenants.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,15 +41,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Covenants-Interface&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/NickG/Documents/java/uni/ProyectoEscuela&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.runner&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/NickG/Documents/java/uni/ProyectoEscuela",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.runner"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\NickG\Documents\java\uni\Login_Project-LoginView" />
@@ -79,6 +77,19 @@
       <option name="presentableId" value="Default" />
       <updated>1695311858195</updated>
     </task>
+    <task id="LOCAL-00001" summary="override hashcode and equals in covenants">
+      <option name="closed" value="true" />
+      <created>1695698781497</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1695698781497</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="override hashcode and equals in covenants" />
+    <option name="LAST_COMMIT_MESSAGE" value="override hashcode and equals in covenants" />
   </component>
 </project>

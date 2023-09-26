@@ -42,3 +42,8 @@ ComboBox{
         -fx-pref-width: 100px;
         -fx-pref-height: 50px
 }
+#labelError{
+        -fx-text-fill: white;
+        -fx-alignment: center;
+        -fx-alignment: center;
+}

@@ -11,9 +11,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 
 import java.io.File;
 import java.util.List;
@@ -34,6 +33,8 @@ public class ManageCovenants extends Header{
     Button add, delete, edit;
     Covenant editCovenant;
     Boolean confirmChange;
+    Label errorLabel;
+    VBox errorContainer;
 
     ObservableList<Covenant> covenants = FXCollections.observableArrayList();
 
@@ -124,10 +125,21 @@ public class ManageCovenants extends Header{
         VBox.setMargin(delete, new Insets(10,0,10,0));
         VBox.setMargin(edit, new Insets(10,0,10,0));
 
+        this.errorContainer = new VBox();
+        errorContainer.setMaxHeight(60);
+        errorContainer.setMinWidth(160);
+        errorContainer.setId("errorContainer");
+        errorContainer.setAlignment(Pos.CENTER);
+        errorContainer.setVisible(false);
+
+        this.errorLabel = new Label("Error: Algo salió mal.");
+
+        errorContainer.getChildren().add(errorLabel);
+
         HBox hBox = new HBox();
         hBox.setPadding(new Insets(10,10,10,10));
         hBox.setSpacing(20);
-        hBox.getChildren().addAll(vBox1,vBox2,vBox3);
+        hBox.getChildren().addAll(vBox1,vBox2,vBox3, errorContainer);
         return hBox;
     }
 
@@ -215,7 +227,12 @@ public class ManageCovenants extends Header{
             }
         }
 
-        view.covenantController.addCovenant(inputTitle.getText(), inputContact.getText(),inputName.getText(),inputDescription.getText(),inputLink.getText(), position);
+        if(view.covenantController.addCovenant(inputTitle.getText(), inputContact.getText(),inputName.getText(),inputDescription.getText(),inputLink.getText(), position)){
+            errorContainer.setVisible(false);
+        }else {
+            errorContainer.setVisible(true);
+        }
+
         reStartInputs();
         updateTable();
     }
@@ -245,7 +262,12 @@ public class ManageCovenants extends Header{
 
         for(int i = 0; i<covenantSelected.size();i++){
             Covenant deleted = covenantSelected.get(i);
-            view.covenantController.DeleteCovenant(deleted);
+            if(view.covenantController.DeleteCovenant(deleted)){
+                errorContainer.setVisible(false);
+            }else {
+                errorContainer.setVisible(true);
+            }
+
         }
         covenantSelected.forEach(allCovenants::remove);
         updateTable();
@@ -259,8 +281,12 @@ public class ManageCovenants extends Header{
 
             }
         }
-        view.covenantController.DeleteCovenant(editCovenant);
-        view.covenantController.addCovenant(inputTitle.getText(), inputContact.getText(),inputName.getText(),inputDescription.getText(),inputLink.getText(),position);
+        if(view.covenantController.DeleteCovenant(editCovenant) && view.covenantController.addCovenant(inputTitle.getText(), inputContact.getText(),inputName.getText(),inputDescription.getText(),inputLink.getText(),position)){
+            errorContainer.setVisible(false);
+        }else {
+            errorContainer.setVisible(true);
+        }
+
         reStartInputs();
         updateTable();
     }

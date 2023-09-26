@@ -74,7 +74,12 @@ public class CovenantController {
     public boolean addCovenant(String tittle, String contact, String nameofCreator, String description, String link,int position){
 
         Covenant c =new Covenant(tittle, contact, nameofCreator,description,link,categories.get(position));
-        if(covenantsList.contains(c)) return false;
+        for (Covenant covenant: covenantsList){
+            if (covenant.getTittle().equals(tittle) && covenant.getContact().equals(contact) && covenant.getNameofCreator().equals(nameofCreator) &&
+            covenant.getDescription().equals(description) && covenant.getLink().equals(link)){
+                return false;
+            }
+        }
         covenantsList.add(c);
         return fmc.saveDataToFile(covenantsList,fileName,new TypeToken<List<Covenant>>(){}.getType());
     }

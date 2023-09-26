@@ -17,6 +17,7 @@ co\edu\uptc\controller\PersonController.class
 co\edu\uptc\utilities\JsonStorageUtilities$3.class
 co\edu\uptc\view\ManageCovenants.class
 co\edu\uptc\model\Category.class
+co\edu\uptc\view\SuggestionsView.class
 co\edu\uptc\model\Account.class
 co\edu\uptc\view\ManageSuggestion.class
 co\edu\uptc\controller\SuggestionController$2.class
