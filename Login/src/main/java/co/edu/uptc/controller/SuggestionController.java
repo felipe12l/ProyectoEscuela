@@ -78,18 +78,18 @@ public  class SuggestionController {
     }
 
     public boolean markAsRead(Suggestion sugerencia) {
-        if (sugerencia == null){
+        if (sugerencia == null) {
             return false;
         }
-
-        if (!sugerencia.isRead()) {
-            sugerencia.setRead(true);
-            return fmc.saveDataToFile(suggestionsList, fileName, new TypeToken<List<Suggestion>>() {
-            }.getType());
+         for (Suggestion s : suggestionsList) {
+            if (s.equals(sugerencia)) {
+                s.setRead(true);
+                return fmc.saveDataToFile(suggestionsList, fileName, new TypeToken<List<Suggestion>>() {
+                }.getType());
+            }
         }
         return false;
     }
-
 }
 
 
